@@ -1,5 +1,7 @@
 <?php
 
+phpinfo();
+
 // ini_set('display_errors', true);
 
 header('Access-Control-Allow-Origin: *');
@@ -14,8 +16,8 @@ require '../config/config.php';
 require '../lib/class.frontController.php';
 
 try {
-  $app = new frontController($config);
-  $app->run();
+    $app = new frontController($config);
+    $app->run();
 } catch (Exception $exc) {
-  echo $exc->getTraceAsString();
+    echo $exc->getTraceAsString();
 }
