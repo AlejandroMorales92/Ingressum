@@ -1,2 +1,28 @@
+/*MArgin Para el Form*/
+.row{
+  margin-top: 250px;
+}
 
+/*Label enunciado*/
+#F{
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
 
+/*Form Groups*/
+.fr{
+  /*padding: 20px;*/
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+/*Tamaño Boton Login*/
+#bt{
+  margin-top: 60px;
+  margin-bottom: 18px;
+}
+
+/*Tamaño inputs*/
+#inp{
+  height: 20px;
+}
