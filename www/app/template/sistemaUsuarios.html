@@ -1,4 +1,3 @@
-
 <ng-include src=" 'app/template/partial/menuTop.html' "></ng-include>
 <div class="col-lg-12 body">
   <ng-include src=" 'app/template/partial/menuLeft.html' "></ng-include>
@@ -8,10 +7,268 @@
         <CENTER><h1>SISTEMA DE USUARIOS</h1></center>
       </div>
       <div class="row">
-        <div class="col-lg-12">
-          <h1>HOLA</h1>
+        <div class="col-lg-offset-0">
+          <img title="Agregar Nuevo Usuario" class="img-circle icono" src="img/ColaboradordeEntrada.png" data-toggle="modal" data-target="#myModal">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class=" col-lg-3 col-lg-offset-0">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Buscar por Cédula o Nombre">
+          <span class="input-group-btn">
+            <button id="bnb" type="button" class="btn btn-default">Buscar</button>
+          </span>
+        </div>
+      </div>
+
+      <!--Datagridview donde mostrara los Admin o Controlador de entrada registrados-->
+      <div class="col-lg-offset-3" >
+        <table class="table">
+          <tr>
+            <th id="texto">Cédula</th>
+            <th id="texto">Alias</th>
+            <th id="texto">Nombre Usuario</th>
+            <th id="texto">Rol</th>
+            <th id="texto">Teléfono</th>
+            <th id="texto">Acciones</th>
+          </tr>
+          <tr>
+            <th>1112776986</th>
+            <th>Huevo</th>
+            <th>Cristian1992</th>
+            <th>Admin</th>
+            <th>3113224973</th>
+            <th>
+              <i title="Editar" class="glyphicon glyphicon-pencil iconoEditar"  data-toggle="modal" data-target="#myModal1"></i>
+              <i title="Eliminar" class="glyphicon glyphicon-trash iconoEliminar" data-toggle="modal" data-target="#myModal2"></i>
+          </tr>
+        </table>
+      </div>
+
+
+      <!--Boton que mostrara la cantidad de paginas-->
+      <div class="col-lg-offset-10" >
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </nav>
+      </div>    
+    </div>
+  </div>
+</div>
+
+
+<!--Formulario para el Registro de Usuarios (ADMIN / CONTROLADOR DE ENTRADA)-->
+<div id="myModal" class="modal fade bs-example-modal-sm" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <center><h4 class="modal-title" id="RegistroNuevo"><strong>Registro de Nuevo Usuario</strong></h4></center>
+      </div>
+
+
+      <div class="row">
+        <div class=" col-lg-12">
+          <div class="modal-body">
+
+            <div class="panel panel-default">
+              <div class="panel-heading"><center id="Registro">Datos Personales</center></div>
+              <div class="panel-body">
+
+
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="cedula" placeholder="Cédula">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12"> 
+                      <input type="text" class="form-control" id="nombreapellido" placeholder="Nombre Completo">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="tl" placeholder="Teléfono">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!--Datos del Usuario-->
+            <div class="panel panel-default">
+              <div class="panel-heading"><center id="Registro">Datos del Usuario </center></div>
+              <div class="panel-body">
+
+
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="email" placeholder="Usuario">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12"> 
+                      <input type="password" class="form-control" id="pwd" placeholder="Contraseña">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="password" class="form-control" id="email" placeholder="Confirmar Contraseña">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <select class="form-control input-sm" ng-model="RegistrarUsuario.Rol" placeholder="Rol">
+                        <option value="Admin">Administrador</option>
+                        <option value="Controlador">Controlador de Entrada</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button ng-click="RegistrarUsuario" type="button" class="btn btn-primary btn-block btn-sm" data-dismiss="modal">Crear</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+<!--Formulario para Editar Usuarios (ADMIN / CONTROLADOR DE ENTRADA)-->
+<div id="myModal1" class="modal fade bs-example-modal-sm" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <center><h4 class="modal-title" id="RegistroNuevo"><strong>Editar Usuario</strong></h4></center>
+      </div>
+
+
+      <div class="row">
+        <div class=" col-lg-12">
+          <div class="modal-body">
+
+            <div class="panel panel-default">
+              <div class="panel-heading"><center id="Registro">Datos Personales</center></div>
+              <div class="panel-body">
+
+
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="cedula" placeholder="Cédula">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12"> 
+                      <input type="text" class="form-control" id="nombreapellido" placeholder="Nombre Completo">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="tl" placeholder="Teléfono">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!--Datos del Usuario-->
+            <div class="panel panel-default">
+              <div class="panel-heading"><center id="Registro">Datos del Usuario </center></div>
+              <div class="panel-body">
+
+
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="email" placeholder="Usuario">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12"> 
+                      <input type="password" class="form-control" id="pwd" placeholder="Contraseña">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="password" class="form-control" id="email" placeholder="Confirmar Contraseña">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <select class="form-control input-sm" id="rol" ng-model="EditarUsuario.Rol" placeholder="Rol">
+                        <option value="Admin">Administrador</option>
+                        <option value="Controlador">Controlador de Entrada</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button ng-click="EditarUsuario" type="button" class="btn btn-primary btn-block btn-sm" data-dismiss="modal">Editar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Formulario para Eliminar Usuarios (ADMIN / CONTROLADOR DE ENTRADA)-->
+<div id="myModal2" class="modal fade bs-example-modal-sm" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <center><img class="modal-title" id="eliminar" src="img/trianguloatention.jpg"></center>
+      </div>
+
+      <div class="row">
+        <div class=" col-lg-12">
+          <div class="modal-body">
+
+
+            <center id="Registro">Seguro que desea eliminar el usuario?</center>
+
+
+            <form class="form-horizontal">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <center>
+                    <button id="aceptar" ng-click="EliminarUsuario" type="button" class="btn btn-primary btn-block btn-sm" data-dismiss="modal">Aceptar</button>
+                   <button id="cancelar" ng-click="EliminarUsuario" type="button" class="btn btn-default btn-block btn-sm" data-dismiss="modal">Cancelar</button>
+                  </center>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

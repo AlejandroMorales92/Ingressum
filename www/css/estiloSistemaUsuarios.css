@@ -1,2 +1,55 @@
+#bn{
+  color: black;
+  border: none;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
+#texto{
+  font-family: arial narrow;
+  font-size: 20px;
+  text-align: justify;
+}
 
+#pp{
+  font-family: arial narrow;
+  font-family: 15px;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+#Registro{
+  font-family: arial narrow;
+  font-size: 20px;
+}
+
+#RegistroNuevo{
+  font-family: arial narrow;
+  font-size: 25px;
+}
+
+.icono{
+  width: 90px;
+  height: 90px;
+}
+
+#aceptar{
+  font-family: arial narrow;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+#cancelar{
+  font-family: arial narrow;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+#eliminar{
+  font-family: arial narrow;
+  width: 60px;
+  height: 60px;
+}
