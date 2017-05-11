@@ -7,11 +7,161 @@
       <div class="page-header">
         <CENTER><h1>REGISTRO DE COLABORADORES</h1></center>
       </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>HOLA</h1>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-6">
+        <h4><img class="img-circle iconoAgregar" src="img/IconoAgregar.png" data-toggle="modal" data-target="#nuevoColaborador">Nuevo Usuario</h4>
+      </div>
+      <div class="col-lg-6">
+        <form class="form-inline navbar-form navbar-left">
+          <div class="form-group formulario">
+            <input type="text" class="form-control" placeholder="Buscar">
+          </div>
+          <button type="submit" class="btn btn-default botonBuscar">Buscar</button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+
+
+        <div class="table-responsive ">
+          <table class="table">
+            <tr>
+              <th>Cédula</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Categoria</th>
+              <th>Teléfono</th>
+              <th>Dirección</th>
+              <th>Correo</th>
+              <th>Acciones</th>
+            </tr>
+            <tr>
+              <th>1112792402</th>
+              <th>Marlon</th>
+              <th>Villegas Vargas</th>
+              <th>ALEN PRO</th>
+              <th>3205801438</th>
+              <th>Calle siempre viva</th>
+              <th>mvillegas64@misena.edu.co</th>
+              <th><button title="Editar" class="glyphicon glyphicon-pencil icono"></button>
+            <button title="Eliminar" class="glyphicon glyphicon-trash icono"></button></th>
+            </tr>
+            <tr>
+              <th>1112793165</th>
+              <th>Willy Ballenita</th>
+              <th>Piedrahita Granada</th>
+              <th>ALEN PRO</th>
+              <th>3125954132</th>
+              <th>Calle chancla vieja</th>
+              <th>bapiedrahita@misena.edu.co</th>
+              <th><button title="Editar" class="glyphicon glyphicon-pencil icono"></button>
+            <button title="Eliminar" class="glyphicon glyphicon-trash icono"></button></th>
+            </tr>
+            <tr>
+              <th>1117459452</th>
+              <th>Cristhian La Tortuga</th>
+              <th>Violasquez Garcia</th>
+              <th>Mundo Magico</th>
+              <th>3145957842</th>
+              <th>Calle Bareta Mala</th>
+              <th>soyvicioso@maracachafa.com</th>
+              <th><button title="Editar" class="glyphicon glyphicon-pencil icono"></button>
+            <button title="Eliminar" class="glyphicon glyphicon-trash icono"></button></th>
+            </tr>
+            <th>11147852375</th>
+              <th>Huevo</th>
+              <th>Morales Pino</th>
+              <th>Semillas del Pacifico</th>
+              <th>3187581236</th>
+              <th>Circunvalar del bareto</th>
+              <th>huevosrevueltos@yema.com</th>
+              <th><button title="Editar" class="glyphicon glyphicon-pencil icono"></button>
+            <button title="Eliminar" class="glyphicon glyphicon-trash icono"></button></th>
+            </tr>
+            <tr ng-repeat="usuario in usuarios">
+              <td>{{usuario.cedula}}</td>
+              <td>{{usuario.nombres}}</td>
+              <td>{{usuario.apellidos}}</td>
+              <td>{{usuario.categoria}}</td>
+              <td>{{usuario.telefono}}</td>
+              <td>{{usuario.direccion}}</td>
+              <td>{{usuario.correo}}</td>
+              <td>
+            <center>
+              <i ng-click="editar(usuario)" class="glyphicon glyphicon-pencil" style="margin-right: 5px"></i>
+              <i ng-click="eliminar(usuario)" class="glyphicon glyphicon-trash"></i>
+            </center>
+            </td>
+            </tr>
+          </table>
+          <nav aria-label="...">
+            <ul class="pager">
+              <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+              <li class="next"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+          </nav>
         </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" id="nuevoColaborador" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nuevo Colaborador</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="alert alert-success" ng-show="alerta">
+            <center>Colaborador Registrado</center>
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" id="cedula" ng-model="dataRegistrarColaborador.cedula" placeholder="Cédula*">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="nomUsuario" ng-trim="true" ng-pattern="{{modeloSoloLetras}}"  ng-model="dataRegistrarColaborador.nomColaborador" placeholder="Nombres*">
+            <p ng-show="dataRegistrarColaborador.nomColaborador == null" class="parrafoError">
+              <i class="glyphicon glyphicon-exclamation-sign iconoError"></i>el dato digitado no es válido
+            </p>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="apelliUsuario" ng-trim="true" ng-pattern="{{modeloSoloLetras}}"  ng-model="dataRegistrarColaborador.apelliColaborador" placeholder="Apellidos*">
+            <p ng-show="dataRegistrarColaborador.apelliColaborador == null" class="parrafoError">
+              <i class="glyphicon glyphicon-exclamation-sign iconoError"></i>el dato digitado no es válido
+            </p>
+          </div>
+          <div class="form-group">
+            <select class="form-control input-sm" ng-model="dataRegistrarColaborador.categoria">
+              <option value="Alen Pro">Alen Pro</option>
+              <option value="Semillas del Pacifico">Semillas del Pacifico</option>
+              <option value="Mundo Magico">Mundo Magico</option>
+              <option value="Contratistas">Contratistas</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" id="telefono" ng-model="dataRegistrarColaborador.telefono" placeholder="Teléfono*">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="direccion"  ng-model="dataRegistrarColaborador.direccion" placeholder="Dirección*">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="correo"  ng-model="dataRegistrarColaborador.correo" placeholder="Correo*">
+          </div>
+          <button ng-click="procesarRegistroColaborador()" type="button" class="btn btn-primary btn-block btn-sm">Crear</button>
+        </form>
       </div>
     </div>
   </div>
 </div>
+
+
