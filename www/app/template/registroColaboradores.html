@@ -47,8 +47,9 @@
               <th>3205801438</th>
               <th>Calle siempre viva</th>
               <th>mvillegas64@misena.edu.co</th>
-              <th><button title="Editar" class="glyphicon glyphicon-pencil icono"></button>
-            <button title="Eliminar" class="glyphicon glyphicon-trash icono"></button></th>
+              <th>
+                <i title="Editar" class="glyphicon glyphicon-pencil iconoEditar"  data-toggle="modal" data-target="#myModal1"></i>
+                <i title="Eliminar" class="glyphicon glyphicon-trash iconoEliminar" data-toggle="modal" data-target="#myModal2"></i>
             </tr>
             <tr>
               <th>1112793165</th>
@@ -58,8 +59,9 @@
               <th>3125954132</th>
               <th>Calle chancla vieja</th>
               <th>bapiedrahita@misena.edu.co</th>
-              <th><button title="Editar" class="glyphicon glyphicon-pencil icono"></button>
-            <button title="Eliminar" class="glyphicon glyphicon-trash icono"></button></th>
+              <th>
+                <i title="Editar" class="glyphicon glyphicon-pencil iconoEditar"  data-toggle="modal" data-target="#myModal1"></i>
+                <i title="Eliminar" class="glyphicon glyphicon-trash iconoEliminar" data-toggle="modal" data-target="#myModal2"></i>
             </tr>
             <tr>
               <th>1117459452</th>
@@ -69,18 +71,21 @@
               <th>3145957842</th>
               <th>Calle Bareta Mala</th>
               <th>soyvicioso@maracachafa.com</th>
-              <th><button title="Editar" class="glyphicon glyphicon-pencil icono"></button>
-            <button title="Eliminar" class="glyphicon glyphicon-trash icono"></button></th>
+              <th>
+                <i title="Editar" class="glyphicon glyphicon-pencil iconoEditar"  data-toggle="modal" data-target="#myModal1"></i>
+                <i title="Eliminar" class="glyphicon glyphicon-trash iconoEliminar" data-toggle="modal" data-target="#myModal2"></i>
             </tr>
-            <th>11147852375</th>
+            <tr>
+              <th>11147852375</th>
               <th>Huevo</th>
               <th>Morales Pino</th>
               <th>Semillas del Pacifico</th>
               <th>3187581236</th>
               <th>Circunvalar del bareto</th>
               <th>huevosrevueltos@yema.com</th>
-              <th><button title="Editar" class="glyphicon glyphicon-pencil icono"></button>
-            <button title="Eliminar" class="glyphicon glyphicon-trash icono"></button></th>
+              <th>
+                <i title="Editar" class="glyphicon glyphicon-pencil iconoEditar"  data-toggle="modal" data-target="#myModal1"></i>
+                <i title="Eliminar" class="glyphicon glyphicon-trash iconoEliminar" data-toggle="modal" data-target="#myModal2"></i>
             </tr>
             <tr ng-repeat="usuario in usuarios">
               <td>{{usuario.cedula}}</td>
@@ -112,7 +117,7 @@
 </div>
 
 
-
+<!--Modal de agregar-->
 <div class="modal fade bs-example-modal-sm" tabindex="-1" id="nuevoColaborador" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
@@ -165,3 +170,88 @@
 </div>
 
 
+<!--Formulario para Editar Usuarios (ADMIN / CONTROLADOR DE ENTRADA)-->
+<div id="myModal1" class="modal fade bs-example-modal-sm" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+
+      <!-- Modal content-->
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <center><h4 class="modal-title" id="editarColaborador"><strong>Editar Colaborador</strong></h4></center>
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" id="cedula" ng-model="dataEditarColaborador.cedula" placeholder="Cédula*">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="nomUsuario" ng-trim="true" ng-pattern="{{modeloSoloLetras}}"  ng-model="dataEditarColaborador.nomColaborador" placeholder="Nombres*">
+          <p ng-show="dataEditarColaborador.nomColaborador == null" class="parrafoError">
+            <i class="glyphicon glyphicon-exclamation-sign iconoError"></i>el dato digitado no es válido
+          </p>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="apelliUsuario" ng-trim="true" ng-pattern="{{modeloSoloLetras}}"  ng-model="dataEditarColaborador.apelliColaborador" placeholder="Apellidos*">
+          <p ng-show="dataEditarColaborador.apelliColaborador == null" class="parrafoError">
+            <i class="glyphicon glyphicon-exclamation-sign iconoError"></i>el dato digitado no es válido
+          </p>
+        </div>
+        <div class="form-group">
+          <select class="form-control input-sm" ng-model="dataEditarColaborador.categoria">
+            <option value="Alen Pro">Alen Pro</option>
+            <option value="Semillas del Pacifico">Semillas del Pacifico</option>
+            <option value="Mundo Magico">Mundo Magico</option>
+            <option value="Contratistas">Contratistas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" id="telefono" ng-model="dataEditarColaborador.telefono" placeholder="Teléfono*">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="direccion"  ng-model="dataEditarColaborador.direccion" placeholder="Dirección*">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="correo"  ng-model="dataEditarColaborador.correo" placeholder="Correo*">
+        </div>
+        <button ng-click="procesarEditarColaborador()" type="button" class="btn btn-primary btn-block btn-sm">Editar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Formulario para Eliminar Usuarios (ADMIN / CONTROLADOR DE ENTRADA)-->
+<div id="myModal2" class="modal fade bs-example-modal-sm" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <center><img class="modal-title" id="eliminar" src="img/trianguloatention.jpg"></center>
+      </div>
+
+      <div class="row">
+        <div class=" col-lg-12">
+          <div class="modal-body">
+
+
+            <center id="Registro">Seguro que desea eliminar el colaborador?</center>
+
+
+            <form class="form-horizontal">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <center>
+                    <button id="aceptar" ng-click="EliminarUsuario" type="button" class="btn btn-primary btn-block btn-sm" data-dismiss="modal">Aceptar</button>
+                    <button id="cancelar" ng-click="EliminarUsuario" type="button" class="btn btn-default btn-block btn-sm" data-dismiss="modal">Cancelar</button>
+                  </center>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
