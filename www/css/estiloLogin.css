@@ -1,5 +1,5 @@
 /*MArgin Para el Form*/
-.row{
+.rowLogin{
   margin-top: 250px;
 }
 
@@ -24,5 +24,4 @@
 
 /*Tamaño Inputs*/
 #inp{
-  height: 20px;
 }

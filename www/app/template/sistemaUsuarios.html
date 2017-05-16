@@ -1,274 +1,278 @@
+
 <ng-include src=" 'app/template/partial/menuTop.html' "></ng-include>
 <div class="col-lg-12 body">
-  <ng-include src=" 'app/template/partial/menuLeft.html' "></ng-include>
-  <div class="col-lg-10 panel panel-default principal">
-    <div class="panel-body">
-      <div class="page-header">
-        <CENTER><h1>SISTEMA DE USUARIOS</h1></center>
-      </div>
-      <div class="row">
-        <div class="col-lg-offset-0">
-          <img title="Agregar Nuevo Usuario" class="img-circle icono" src="img/ColaboradordeEntrada.png" data-toggle="modal" data-target="#myModal">
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class=" col-lg-3 col-lg-offset-0">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Buscar por Cédula o Nombre">
-          <span class="input-group-btn">
-            <button id="bnb" type="button" class="btn btn-default">Buscar</button>
-          </span>
-        </div>
-      </div>
-
-      <!--Datagridview donde mostrara los Admin o Controlador de entrada registrados-->
-      <div class="col-lg-offset-3" >
-        <table class="table">
-          <tr>
-            <th id="texto">Cédula</th>
-            <th id="texto">Alias</th>
-            <th id="texto">Nombre Usuario</th>
-            <th id="texto">Rol</th>
-            <th id="texto">Teléfono</th>
-            <th id="texto">Acciones</th>
-          </tr>
-          <tr>
-            <th>1112776986</th>
-            <th>Huevo</th>
-            <th>Cristian1992</th>
-            <th>Admin</th>
-            <th>3113224973</th>
-            <th>
-              <i title="Editar" class="glyphicon glyphicon-pencil iconoEditar"  data-toggle="modal" data-target="#myModal1"></i>
-              <i title="Eliminar" class="glyphicon glyphicon-trash iconoEliminar" data-toggle="modal" data-target="#myModal2"></i>
-          </tr>
-        </table>
-      </div>
-
-
-      <!--Boton que mostrara la cantidad de paginas-->
-      <div class="col-lg-offset-10" >
-        <nav aria-label="Page navigation">
-          <ul class="pagination">
-            <li>
-            </li>
-            <li>
-            </li>
-          </ul>
-        </nav>
-      </div>    
-    </div>
-  </div>
-</div>
-
-
-<!--Formulario para el Registro de Usuarios (ADMIN / CONTROLADOR DE ENTRADA)-->
-<div id="myModal" class="modal fade bs-example-modal-sm" role="dialog">
-  <div class="modal-dialog modal-sm">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <center><h4 class="modal-title" id="RegistroNuevo"><strong>Registro de Nuevo Usuario</strong></h4></center>
-      </div>
-
-
-      <div class="row">
-        <div class=" col-lg-12">
-          <div class="modal-body">
-
-            <div class="panel panel-default">
-              <div class="panel-heading"><center id="Registro">Datos Personales</center></div>
-              <div class="panel-body">
-
-
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <input type="text" class="form-control" id="cedula" placeholder="Cédula">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12"> 
-                      <input type="text" class="form-control" id="nombreapellido" placeholder="Nombre Completo">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <input type="text" class="form-control" id="tl" placeholder="Teléfono">
-                    </div>
-                  </div>
-                </form>
-              </div>
+    <ng-include src=" 'app/template/partial/menuLeft.html' "></ng-include>
+    <div class="col-lg-10 panel panel-default principal">
+        <div class="panel-body">
+            <div class="page-header">
+                <CENTER><h1>SISTEMA DE USUARIOS</h1></center>
             </div>
-
-            <!--Datos del Usuario-->
-            <div class="panel panel-default">
-              <div class="panel-heading"><center id="Registro">Datos del Usuario </center></div>
-              <div class="panel-body">
-
-
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <input type="text" class="form-control" id="email" placeholder="Usuario">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12"> 
-                      <input type="password" class="form-control" id="pwd" placeholder="Contraseña">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <input type="password" class="form-control" id="email" placeholder="Confirmar Contraseña">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <select class="form-control input-sm" ng-model="RegistrarUsuario.Rol" placeholder="Rol">
-                        <option value="Admin">Administrador</option>
-                        <option value="Controlador">Controlador de Entrada</option>
-                      </select>
-                    </div>
-                  </div>
-                  <button ng-click="RegistrarUsuario" type="button" class="btn btn-primary btn-block btn-sm" data-dismiss="modal">Crear</button>
-                </form>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="row" style="margin-top: 0px;">
+            <div class="col-lg-3 col-lg-offset-8">
 
-
-
-
-<!--Formulario para Editar Usuarios (ADMIN / CONTROLADOR DE ENTRADA)-->
-<div id="myModal1" class="modal fade bs-example-modal-sm" role="dialog">
-  <div class="modal-dialog modal-sm">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <center><h4 class="modal-title" id="RegistroNuevo"><strong>Editar Usuario</strong></h4></center>
-      </div>
-
-
-      <div class="row">
-        <div class=" col-lg-12">
-          <div class="modal-body">
-
-            <div class="panel panel-default">
-              <div class="panel-heading"><center id="Registro">Datos Personales</center></div>
-              <div class="panel-body">
-
-
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <input type="text" class="form-control" id="cedula" placeholder="Cédula">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12"> 
-                      <input type="text" class="form-control" id="nombreapellido" placeholder="Nombre Completo">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <input type="text" class="form-control" id="tl" placeholder="Teléfono">
-                    </div>
-                  </div>
-                </form>
-              </div>
             </div>
-
-            <!--Datos del Usuario-->
-            <div class="panel panel-default">
-              <div class="panel-heading"><center id="Registro">Datos del Usuario </center></div>
-              <div class="panel-body">
-
-
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <input type="text" class="form-control" id="email" placeholder="Usuario">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12"> 
-                      <input type="password" class="form-control" id="pwd" placeholder="Contraseña">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <input type="password" class="form-control" id="email" placeholder="Confirmar Contraseña">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <select class="form-control input-sm" id="rol" ng-model="EditarUsuario.Rol" placeholder="Rol">
-                        <option value="Admin">Administrador</option>
-                        <option value="Controlador">Controlador de Entrada</option>
-                      </select>
-                    </div>
-                  </div>
-                  <button ng-click="EditarUsuario" type="button" class="btn btn-primary btn-block btn-sm" data-dismiss="modal">Editar</button>
-                </form>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="row" style="margin-top: 0px;">
+            <div class="col-lg-3 col-lg-offset-1">
+                <h4><img class="img-circle iconoAgregar" src="img/IconoAgregar.png" data-toggle="modal" data-target="#nuevoUsuario">Agregar un Nuevo Usuario</h4>
+                <form class="form-inline navbar-form navbar-left">
+                    <div class="form-group formulario">
+                        <input type="text" class="form-control" placeholder="Buscar">
+                    </div>
+                    <button type="submit" class="btn btn-default botonBuscar">Buscar</button>
+                </form>
+            </div>
+            <div class="col-lg-7" style="margin-top: 20px;">
+                <div class="table-responsive ">
+                    <table class="table">
+                        <tr>
+                            <th>Cédula</th>
+                            <th>Alias</th>
+                            <th>Nombre del Uauario</th>
+                            <th>Rol</th>
+                            <th>Teléfono</th>
+                            <th>Acciones</th>
+                        </tr>
+                        <tr>
+                            <th>1112792402</th>
+                            <th>Marlon</th>
+                            <th>Villegas Vargas</th>
+                            <th>ALEN PRO</th>
+                            <th>3205801438</th>
+                            <th><i title="Editar" class="glyphicon glyphicon-pencil iconoTabla" data-toggle="modal" data-target="#editarUsuario"></i>
+                                <i title="Eliminar" class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#eliminarUsuario"></i></th>
+                        </tr>
 
-
-
-<!--Formulario para Eliminar Usuarios (ADMIN / CONTROLADOR DE ENTRADA)-->
-<div id="myModal2" class="modal fade bs-example-modal-sm" role="dialog">
-  <div class="modal-dialog modal-sm">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <center><img class="modal-title" id="eliminar" src="img/trianguloatention.jpg"></center>
-      </div>
-
-      <div class="row">
-        <div class=" col-lg-12">
-          <div class="modal-body">
-
-
-            <center id="Registro">Seguro que desea eliminar el usuario?</center>
-
-
-            <form class="form-horizontal">
-              <div class="form-group">
-                <div class="col-sm-12">
-                  <center>
-                    <button id="aceptar" ng-click="EliminarUsuario" type="button" class="btn btn-primary btn-block btn-sm" data-dismiss="modal">Aceptar</button>
-                   <button id="cancelar" ng-click="EliminarUsuario" type="button" class="btn btn-default btn-block btn-sm" data-dismiss="modal">Cancelar</button>
-                  </center>
+                    </table>
+                    <nav aria-label="...">
+                        <ul class="pager">
+                            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+                            <li class="next"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                    </nav>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
+
     </div>
-  </div>
 </div>
 
 
+<!-- MODAL NUEVO USUARIO-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" id="nuevoUsuario" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus-circle"></i>
+                    Nuevo Usuario</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="alert alert-success">
+
+                        <center>Usuario Creado</center>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">DATOS PERSONALES</div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="..." placeholder="CEDULA">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="..." placeholder="NOMBRE">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="..." placeholder="TELEFONO">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">DATOS DEL USUARIO</div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user-secret iconoForm"></i>
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="..." placeholder="USUARIO">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock iconoForm3"></i>
+                                            </span>
+                                            <input type="password" class="form-control" aria-label="..." placeholder="CONTRASEÑA">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-unlock-alt iconoForm3"></i>
+                                            </span>
+                                            <input type="password" class="form-control" aria-label="..." placeholder="CONFIRMAR CONTRASEÑA">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-users"></i>
+                                            </span>
+                                            <select class="form-control input-sm" aria-label="...">
+                                                <option>USUARIO</option>
+                                                <option>ADMIN</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <button ng-click="procesarRegistroColaborador()" type="button" class="btn btn-primary btn-block btn-sm">Crear Usuario</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL EDITAR USUARIO-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" id="editarUsuario" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-pencil"></i>
+                    Editar Usuario</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="alert alert-success">
+
+                        <center>Usuario Editado</center>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">DATOS PERSONALES</div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="..." placeholder="CEDULA" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="..." placeholder="NOMBRE">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="..." placeholder="TELEFONO">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">DATOS DEL USUARIO</div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user-secret iconoForm"></i>
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="..." placeholder="USUARIO">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock iconoForm3"></i>
+                                            </span>
+                                            <input type="password" class="form-control" aria-label="..." placeholder="CONTRASEÑA">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-unlock-alt iconoForm3"></i>
+                                            </span>
+                                            <input type="password" class="form-control" aria-label="..." placeholder="CONFIRMAR CONTRASEÑA">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-users"></i>
+                                            </span>
+                                            <select class="form-control input-sm" aria-label="...">
+                                                <option>USUARIO</option>
+                                                <option>ADMIN</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3">
+                            <button ng-click="procesarRegistroColaborador()" type="button" class="btn btn-primary btn-block btn-sm">Crear Usuario</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL ELIMINAR COLABORADOR-->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" id="eliminarUsuario" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
+                    Eliminar Usuario</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-success">
+                    <center>Usuario Eliminado</center>
+                </div>
+                <center>
+                    <p>Esta seguro?</p>
+                    <h3>Se va a eliminar el Usuario</h3>
+                    <p>NOMBRE DEL USUARIO</p>
+                </center>
+                <button ng-click="procesarRegistroColaborador()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+                <button ng-click="procesarRegistroColaborador()" type="button" class="btn btn-default btn-block btn-sm">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 

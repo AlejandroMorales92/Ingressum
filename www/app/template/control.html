@@ -1,93 +1,96 @@
 
 <ng-include src=" 'app/template/partial/menuTop.html' "></ng-include>
 <div class="col-lg-12 body">
-  <ng-include src=" 'app/template/partial/menuLeft.html' "></ng-include>
-  <div class="col-lg-10 panel panel-default principal">
-    <div class="panel-body"> 
-      <div class="page-header">
-        <CENTER><h1>CONTROL DE ENTRADA Y SALIDA</h1></center>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <h3 class="TituloDatosPersonales">Datos Personales</h3>
-          <div class="col-lg-8 col-lg-offset-2 cotenedor1">
+    <ng-include src=" 'app/template/partial/menuLeft.html' "></ng-include>
+    <div class="col-lg-10 panel panel-default principal">
+        <div class="panel-body"> 
+            <div class="page-header">
+                <CENTER><h1>CONTROL DE ENTRADA Y SALIDA</h1></center>
+            </div>
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-lg-5 col-lg-offset-1">
 
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="active"><a href="">DATOS PERSONALES</a></li>
+                    </ul>
+                    <div class="" style="padding: 10px">
 
-            <div class="col-lg-6 col-lg-offset-3">
-              <br>
-
-              <br>
-              <div class="form-group row">
-                <label for="example-text-input" class="col-2 col-form-label">Cedula</label>
-                <div class="col-10">
-                  <input class="form-control" type="text" value="77144744" id="example-text-input">
+                        <div class="row" style="margin-top: 0px">
+                            <br>
+                            <div class="col-lg-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
+                                    </span>
+                                    <input type="text" class="form-control" aria-label="..." placeholder="CEDULA">
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                        </div>
+                        <h5>Nombres:</h5>
+                        <h3>CRISTHIAN CAMILO</h3>
+                        <h5>Apellidos:</h5>
+                        <h3>VELASQUEZ GALARCIO</h3>
+                        <h5>Categoria:</h5>
+                        <h3>ALEN PRO</h3>
+                    </div>  
                 </div>
-                <br>
-                <fieldset disabled>
-                  <div class="form-group">
-                    <label for="disabledTextInput">Cristian Alejandro </label>
-                                      </div>
-                  <fieldset disabled>
-                    <div class="form-group">
-                      <label for="disabledTextInput">Morales Pepo</label>
-                      
-                    </div>
-                    <fieldset disabled>
-                      <div class="form-group">
-                        <label for="disabledTextInput">Mundo Magico </label>
-                       
-                      </div>
-                      </div>
+                <div class="col-lg-5">
 
-                      </div>
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="active"><a href="">DATOS EXTRA</a></li>
+                    </ul>
+                    <div class="" style="padding: 10px">
 
-
-                      </div>
-                      <div class="col-lg-12">
-                        <h3 class="col-lg-offset-2">Datos Extras</h3>
-                        <div class="col-lg-4 col-lg-offset-2 cotenedor2">
-
-
-                          <div class="col-lg-8 col-lg-offset-2">
-                            <br>
-                            <label for="example-text-input" class="col-2 col-form-label">Vehiculo</label>
-                            <select class="form-control form-control-lg">
-                              <option>No</option>
-                              <option>Si</option>
-                            </select>
-                            <br>
-                            <label for="example-text-input" class="col-2 col-form-label">Tipo de Vehiculo</label>
-                            <select class="form-control form-control-lg">
-                              <option>Auto</option>
-                              <option>Moto</option>
-                              <option>Bicicleta</option>
-                            </select>
-                            <br>
-                            <div class="form-group">
-                              <label for="disabledTextInput">Placa</label>
-                              <input type="text" id="disabledTextInput" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group">
-                              <label for="exampleTextarea">Observacion</label>
-                              <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                            </div>
-                            <br>
-                          </div>
-
-
-
-
+                        <div class="row" style="margin-top: 0px">
+                            <div class="col-lg-8">
+                                <br>
+                                <div class="input-group">
+                                    <span class="input-group-addon">VEHICULO
+                                    </span>
+                                    <select class="form-control input-sm" aria-label="...">
+                                        <option>SI</option>
+                                        <option>NO</option>
+                                    </select>
+                                </div><!-- /input-group --><br>
+                                <div class="input-group">
+                                    <span class="input-group-addon">TIPO DE HEVICULO
+                                    </span>
+                                    <select class="form-control" aria-label="...">
+                                        <option>BICICLETA</option>
+                                        <option>MOTOCICLETA</option>
+                                        <option>AUTOMOVIL</option>
+                                    </select>
+                                </div><!-- /input-group --><br>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
+                                    </span>
+                                    <input type="text" class="form-control" aria-label="..." placeholder="PLACA">
+                                </div><!-- /input-group -->
+                                <br>
+                                <div class="form-group">
+                                    <label for="comment">Observaciones:</label>
+                                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                                </div>
+                            </div><!-- /.col-lg-6 -->
                         </div>
-                        <div>
-                        <p class="bienvenido">Bienvenido</p>
-                        <p class="glyphicon glyphicon-time icono">&nbsp;07:17 a.m 07/07-2017</p>
-                        <p class="mensaje">Su hora de registro</p>
+                    </div>  
+                </div>
+            </div><hr/>
+            
+            <div class="row" style="margin-top: 0px">
+                <div class="col-lg-1 col-lg-offset-2">
+                    <span class="glyphicon glyphicon-time iconoReloj"></span>
+                </div>
+                <div class="col-lg-2">
+                    <p>Su Hora de Registro</p>
+                    <h2>3:35pm 12/02/2017</h2>
+                </div>
+                <div class="col-lg-3">
+                    <button class="btn btn-block btn-success btn-lg">Guardar Registro<span class="glyphicon glyphicon-floppy-save iconoGuardar"></span></button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
-                        <button type="button" class="btn btn-primary btn-block botonguardar">Guardar</button>
-                        </div>
-                      </div>
-                      </div>
-                      </div>
-                      </div>
-                      </div>
-                      </div>
+
