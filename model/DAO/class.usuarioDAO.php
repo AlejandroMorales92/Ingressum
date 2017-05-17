@@ -3,7 +3,7 @@
 class usuarioDAO extends dataSource implements IUsuario {
   
   public function delete($id) {
-    $sql = 'DELETE FROM usuario WHERE id = :id';
+    $sql = 'DELETE FROM ces_usuario WHERE usu_id = :id';
     $params = array(
         ':id' => $id
     );
@@ -11,30 +11,35 @@ class usuarioDAO extends dataSource implements IUsuario {
   }
 
   public function insert(\usuario $usuario) {
-    $sql = 'INSERT INTO usuario (usuario, contrasena) VALUES (:user, :pass)';
+    $sql = 'INSERT INTO ces_usuario (rol_id, usu_cedula, usu_nombre, usu_apellido, usu_telefono, usu_alias, usu_password) VALUES (:id, :rolId, :cedula, :nombre, :apellido, :telefono, :alias, :password)';
     $params = array(
-        ':user' => $usuario->getUsuario(),
-        ':pass' => $usuario->getContrasena($this->getConfig()->getHash())
+        ':rolId' => $usuario->getRolId(),
+        ':cedula' => $usuario->getCedula(),
+        ':nombre' => $usuario->getNombre(),
+        ':apellido' => $usuario->getApellido(),
+        ':telefono' => $usuario->getTelefono(),
+        ':alias' => $usuario->getAlias(),
+        ':password' => $usuario->getPassword($this->getConfig()->getHash()),
     );
     return $this->execute($sql, $params);
   }
 
-  public function search($user, $password) {
-    $sql = 'SELECT id FROM usuario WHERE usuario = :user AND contrasena = :pass';
+  public function search($alias, $password) {
+    $sql = 'SELECT usu_id, rol_id, usu_cedula, usu_nombre, usu_apellido, usu_telefono, usu_alias, usu_password FROM ces_usuario WHERE usu_alias = :alias AND usu_password = :password';
     $params = array(
-        ':user' => $user,
-        ':pass' => $password
+        ':alias' => $alias,
+        ':password' => $password
     );
     return $this->query($sql, $params);
   }
 
   public function select() {
-    $sql = 'SELECT id, usuario, contrasena FROM usuario';
+    $sql = 'SELECT usu_id, rol_id, usu_cedula, usu_nombre, usu_apellido, usu_telefono, usu_alias, usu_password FROM ces_usuario';
     return $this->query($sql);
   }
 
   public function selectById($id) {
-    $sql = 'SELECT usuario, contrasena FROM usuario WHERE id = :id';
+    $sql = 'usu_id, rol_id, usu_cedula, usu_nombre, usu_apellido, usu_telefono, usu_alias, usu_password FROM ces_usuario WHERE usu_id = :id';
     $params = array(
         ':id' => $id
     );
@@ -42,10 +47,15 @@ class usuarioDAO extends dataSource implements IUsuario {
   }
 
   public function update(\usuario $usuario) {
-    $sql = 'UPDATE usuario SET usuario = :user, contrasena = :pass WHERE id = :id';
+    $sql = 'UPDATE ces_usuario SET rol_id = :rolId, usu_cedula = :cedula, usu_nombre = :nombre, usu_apellido = :apellido, usu_telefono = :telefono, usu_alias = :alias, usu_password = :password WHERE usu_id = :id';
     $params = array(
-        ':user' => $usuario->getUsuario(),
-        ':pass' => $usuario->getContrasena($this->getConfig()->getHash()),
+        ':rolId' => $usuario->getRolId(),
+        ':cedula' => $usuario->getCedula(),
+        ':nombre' => $usuario->getNombre(),
+        ':apellido' => $usuario->getApellido(),
+        ':telefono' => $usuario->getTelefono(),
+        ':alias' => $usuario->getAlias(),
+        ':password' => $usuario->getPassword($this->getConfig()->getHash()),
         ':id' => $usuario->getId()
     );
     $this->execute($sql, $params);
