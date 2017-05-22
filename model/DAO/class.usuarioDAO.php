@@ -11,7 +11,7 @@ class usuarioDAO extends dataSource implements IUsuario {
   }
 
   public function insert(\usuario $usuario) {
-    $sql = 'INSERT INTO ces_usuario (rol_id, usu_cedula, usu_nombre, usu_apellido, usu_telefono, usu_alias, usu_password) VALUES (:id, :rolId, :cedula, :nombre, :apellido, :telefono, :alias, :password)';
+    $sql = 'INSERT INTO ces_usuario (rol_id, usu_cedula, usu_nombre, usu_apellido, usu_telefono, usu_alias, usu_password) VALUES (:rolId, :cedula, :nombre, :apellido, :telefono, :alias, :password)';
     $params = array(
         ':rolId' => $usuario->getRolId(),
         ':cedula' => $usuario->getCedula(),
@@ -19,7 +19,7 @@ class usuarioDAO extends dataSource implements IUsuario {
         ':apellido' => $usuario->getApellido(),
         ':telefono' => $usuario->getTelefono(),
         ':alias' => $usuario->getAlias(),
-        ':password' => $usuario->getPassword($this->getConfig()->getHash()),
+        ':password' => $usuario->getPassword(),
     );
     return $this->execute($sql, $params);
   }
@@ -34,7 +34,7 @@ class usuarioDAO extends dataSource implements IUsuario {
   }
 
   public function select() {
-    $sql = 'SELECT usu_id, rol_id, usu_cedula, usu_nombre, usu_apellido, usu_telefono, usu_alias, usu_password FROM ces_usuario';
+    $sql = 'SELECT usu_id, rol_id, usu_cedula, usu_nombre, usu_apellido, usu_telefono, usu_alias, usu_password FROM ces_usuario WHERE usu_deleted_at IS NULL';
     return $this->query($sql);
   }
 

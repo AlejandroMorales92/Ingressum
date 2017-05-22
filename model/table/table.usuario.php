@@ -13,7 +13,7 @@ class usuario {
     private $created_at;
     private $updated_at;
     private $deleted_at;
-    
+
     public function getId() {
         return $this->id;
     }
@@ -86,8 +86,8 @@ class usuario {
         $this->alias = $alias;
     }
 
-    public function setPassword($password) {
-        $this->password = $password;
+    public function setPassword($password, $hash) {
+        $this->password = hash($hash, $password, false);
     }
 
     public function setCreatedAt($created_at) {
@@ -101,6 +101,5 @@ class usuario {
     public function setDeletedAt($deleted_at) {
         $this->deleted_at = $deleted_at;
     }
-
 
 }

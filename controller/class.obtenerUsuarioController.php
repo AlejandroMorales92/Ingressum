@@ -1,18 +1,16 @@
 <?php
 
-class identificar extends controllerExtended {
+class obtenerUsuario extends controllerExtended {
 
   public function main(\request $request) {
     try {
-      $this->loadTableUsuario();
+      $this->loadTableusuario();
 
-      $user = $request->getParam('usuario');     
-      $password = hash($this->getConfig()->getHash(), $request->getParam('contrasena'), false);
 
       $usuarioDAO = new usuarioDAOExt($this->getConfig());
-      $respuesta1 = $usuarioDAO->buscar($user, $password);      
+      $respuesta1 = $usuarioDAO->select();
       $respuesta2 = array(
-          'code' => (count($respuesta1) > 0) ? 200 : 500,
+          'code' => ($respuesta1 > 0) ? 200 : 500,
           'datos' => $respuesta1
       );
 
@@ -23,7 +21,7 @@ class identificar extends controllerExtended {
     }
   }
 
-  private function loadTableUsuario() {
+  private function loadTableusuario() {
     require $this->getConfig()->getPath() . 'model/table/table.usuario.php';
     require $this->getConfig()->getPath() . 'model/interface/interface.usuario.php';
     require $this->getConfig()->getPath() . 'model/DAO/class.usuarioDAO.php';

@@ -18,8 +18,8 @@ class agregarColaborador extends controllerExtended {
       $colaboradorDAO = new colaboradorDAOExt($this->getConfig());
       $respuesta1 = $colaboradorDAO->insert($colaborador);
       $respuesta2 = array(
-          'codigo' => ($respuesta1 > 0) ? 200 : 500,
-          'colaborador' => $respuesta1
+          'code' => ($respuesta1 > 0) ? 200 : 500,
+          'datos' => $respuesta1
       );
 
       $this->setParam('rsp', $respuesta2);

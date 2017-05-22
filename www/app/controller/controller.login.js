@@ -29,11 +29,11 @@ angular.module('IngressumApp').controller('loginController', ['$scope', 'securit
             security.validateUserAndPassword($scope.datos).then(function successCallback(response) {
                 // console.log(response);
                 $scope.usuarioErroneo = false;
-                if (response.data.codigo == 500) {
+                if (response.data.code == 500) {
                     $scope.usuarioErroneo = true;
                     $scope.datos = {};
                 } else {
-                    $sessionStorage.usuario = response.data.usuario[0];
+                    $sessionStorage.usuario = response.data.datos[0];
                     $location.path('/index');
                 }
             }, function errorCallback(response) {
