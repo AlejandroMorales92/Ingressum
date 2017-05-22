@@ -69,10 +69,10 @@
                     Nuevo Usuario</h4>
             </div>
             <div class="modal-body">
-                <form>
+                <form ng-submit="submit()">
                     <div class="alert alert-success">
 
-                        <center>Usuario Creado</center>
+                        <center>Usuario Creado Con Exito</center>
                     </div>
 
                     <div class="row">
@@ -84,21 +84,28 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
                                             </span>
-                                            <input type="text" class="form-control" aria-label="..." placeholder="CEDULA">
+                                            <input ng-model="dataRegistrarUsuario.cedula" type="text" class="form-control" aria-label="..." placeholder="CEDULA">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
                                             </span>
-                                            <input type="text" class="form-control" aria-label="..." placeholder="NOMBRE">
+                                            <input ng-model="dataRegistrarUsuario.nombre" type="text" class="form-control" aria-label="..." placeholder="NOMBRE">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user iconoForm"></i>
+                                            </span>
+                                            <input ng-model="dataRegistrarUsuario.apellido" type="text" class="form-control" aria-label="..." placeholder="APELLIDO">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
                                             </span>
-                                            <input type="text" class="form-control" aria-label="..." placeholder="TELEFONO">
+                                            <input ng-model="dataRegistrarUsuario.telefono" type="text" class="form-control" aria-label="..." placeholder="TELEFONO">
                                         </div>
                                     </div>
                                 </div>
@@ -112,28 +119,28 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-user-secret iconoForm"></i>
                                             </span>
-                                            <input type="text" class="form-control" aria-label="..." placeholder="USUARIO">
+                                            <input ng-model="dataRegistrarUsuario.alias" type="text" class="form-control" aria-label="..." placeholder="USUARIO">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-lock iconoForm3"></i>
                                             </span>
-                                            <input type="password" class="form-control" aria-label="..." placeholder="CONTRASEÑA">
+                                            <input ng-model="dataRegistrarUsuario.contrasena1" type="password" class="form-control" aria-label="..." placeholder="CONTRASEÑA">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-unlock-alt iconoForm3"></i>
                                             </span>
-                                            <input type="password" class="form-control" aria-label="..." placeholder="CONFIRMAR CONTRASEÑA">
+                                            <input ng-model="dataRegistrarUsuario.contrasena2" type="password" class="form-control" aria-label="..." placeholder="CONFIRMAR CONTRASEÑA">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-users"></i>
                                             </span>
-                                            <select class="form-control input-sm" aria-label="...">
+                                            <select ng-model="dataRegistrarUsuario.rol" class="form-control input-sm" aria-label="...">
                                                 <option>USUARIO</option>
                                                 <option>ADMIN</option>
                                             </select>
@@ -145,7 +152,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-lg-offset-3">
-                            <button ng-click="procesarRegistroColaborador()" type="button" class="btn btn-primary btn-block btn-sm">Crear Usuario</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-sm">Crear Usuario</button>
                         </div>
                     </div>
                 </form>

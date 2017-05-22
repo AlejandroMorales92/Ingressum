@@ -1,7 +1,5 @@
 <?php
 
-phpinfo();
-
 // ini_set('display_errors', true);
 
 header('Access-Control-Allow-Origin: *');

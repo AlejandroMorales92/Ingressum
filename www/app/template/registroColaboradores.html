@@ -36,27 +36,16 @@
                             <th>Correo</th>
                             <th>Acciones</th>
                         </tr>
-                        <tr>
-                            <th>1112792402</th>
-                            <th>Marlon</th>
-                            <th>Villegas Vargas</th>
-                            <th>ALEN PRO</th>
-                            <th>3205801438</th>
-                            <th>Calle siempre viva</th>
-                            <th>mvillegas64@misena.edu.co</th>
-                            <th><i title="Editar" class="glyphicon glyphicon-pencil iconoTabla" data-toggle="modal" data-target="#editarColaborador"></i>
-                                <i title="Eliminar" class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#eliminarColaborador"></i></th>
-                        </tr>
-                        <tr>
-                            <th>1113594150</th>
-                            <th>CRISTHIAN CAMILO</th>
-                            <th>VELASQUEZ GALARCIO</th>
-                            <th>MUNDO MAGICO</th>
-                            <th>3113650724</th>
-                            <th>CRA 10 # 16A-62</th>
-                            <th>cristhianvg1991@gmail.com</th>
-                            <th><i title="Editar" class="glyphicon glyphicon-pencil iconoTabla" data-toggle="modal" data-target="#editarColaborador"></i>
-                                <i title="Eliminar" class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#eliminarColaborador"></i></th>
+                        <tr ng-repeat="colaborador in colaboradores">
+                            <td>{{colaborador.col_cedula}}</td>
+                            <td>{{colaborador.col_nombre}}</td>
+                            <td>{{colaborador.col_apellido}}</td>
+                            <td>{{colaborador.col_categoria}}</td>
+                            <td>{{colaborador.col_telefono}}</td>
+                            <td>{{colaborador.col_direccion}}</td>
+                            <td>{{colaborador.col_correo}}</td>
+                            <td><i title="Editar" class="glyphicon glyphicon-pencil iconoTabla" data-toggle="modal" data-target="#editarColaborador"></i>
+                                <i title="Eliminar" class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#eliminarColaborador"></i></td>
                         </tr>
 
                     </table>
@@ -84,38 +73,37 @@
                     Nuevo Colaborador</h4>
             </div>
             <div class="modal-body">
-                <form>
-                    <div class="alert alert-success">
-
-                        <center>Colaborador Creado</center>
+                <form ng-submit="submit()">
+                    <div class="alert alert-success" ng-show="colaboradorRegistrado">
+                        <center>Colaborador Creado Con Exito</center>
                     </div>
 
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="CEDULA">
+                            <input ng-model="dataRegistrarColaborador.cedula" type="text" class="form-control" aria-label="..." placeholder="CEDULA" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="NOMBRE">
+                            <input ng-model="dataRegistrarColaborador.nombre" type="text" class="form-control" aria-label="..." placeholder="NOMBRE" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="APELLIDO">
+                            <input ng-model="dataRegistrarColaborador.apellido" type="text" class="form-control" aria-label="..." placeholder="APELLIDO" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-building iconoForm"></i>
                             </span>
-                            <select class="form-control input-sm" aria-label="...">
+                            <select ng-model="dataRegistrarColaborador.categoria" class="form-control input-sm" aria-label="..." required>
                                 <option>ALLEN PRO</option>
                                 <option>SEMILLAS DEL PACIFICO</option>
                                 <option>MUNDO MAGICO</option>
@@ -127,24 +115,24 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="TELEFONO">
+                            <input ng-model="dataRegistrarColaborador.telefono" type="text" class="form-control" aria-label="..." placeholder="TELEFONO" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-map-marker iconoForm3"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="DIRECCION">
+                            <input ng-model="dataRegistrarColaborador.direccion" type="text" class="form-control" aria-label="..." placeholder="DIRECCION" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope-o"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="CORREO">
+                            <input ng-model="dataRegistrarColaborador.correo" type="text" class="form-control" aria-label="..." placeholder="CORREO" required>
                         </div>
                     </div>
-                    <button ng-click="procesarRegistroColaborador()" type="button" class="btn btn-primary btn-block btn-sm">Crear</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-sm">Crear</button>
                 </form>
             </div>
         </div>

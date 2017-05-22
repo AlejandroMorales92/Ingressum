@@ -62,6 +62,7 @@ class frontController {
   private function loadLibs() {
     require $this->getConfig()->getPath() . 'lib/class.dataSource.php';
     require $this->getConfig()->getPath() . 'lib/class.controller.php';
+    require $this->getConfig()->getPath() . 'config/class.controlExtended.php';
     require $this->getConfig()->getPath() . 'lib/class.request.php';
     require $this->getConfig()->getPath() . 'lib/class.session.php';
     require $this->getConfig()->getPath() . 'lib/class.view.php';

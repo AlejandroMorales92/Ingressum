@@ -13,7 +13,7 @@ class colaborador {
     private $created_at;
     private $updated_at;
     private $deleted_at;
-    
+
     public function getId() {
         return $this->id;
     }
@@ -101,6 +101,5 @@ class colaborador {
     public function setDeletedAt($deleted_at) {
         $this->deleted_at = $deleted_at;
     }
-
 
 }

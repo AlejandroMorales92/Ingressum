@@ -1,1 +1,6 @@
-angular.module('IngressumApp', ['ngRoute', 'ngResource']);
+angular.module('IngressumApp', [
+    'ngRoute',
+    'ngResource',
+    'ngStorage',
+    'ngRoute.middleware'
+]);
