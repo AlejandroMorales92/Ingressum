@@ -1,22 +1,129 @@
 
 <ng-include src=" 'app/template/partial/menuTop.html' "></ng-include>
 <div class="col-lg-12 body">
-  <ng-include src=" 'app/template/partial/menuLeft.html' "></ng-include>
-  <div class="col-lg-10 panel panel-default principal">
-    <div class="panel-body">
-      <div class="page-header">
-        <CENTER><h1>REPORTES</h1></center>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-            <a href="#!/repGeneralPersonas"><h3>REPORTE GENERAL DE PERSONAS EN LA EMPRESA</h3></a>
-            <a href="#!/repGeneralUsuarios"><h3>REPORTE GENERAL DE USUARIOS</h3></a>
-            <a href="#!/repPorPersona"><h3>REPORTE POR PERSONA</h3></a>
-            <a href="#!/repPorFecha"><h3>REPORTE POR FECHA</h3></a>
-            <a href="#!/repPorFechaYHora"><h3>REPORTE POR FECHA Y HORA</h3></a>
-            <a href="#!/repPorCategoria"><h3>REPORTE POR CATEGORIA</h3></a>
+    <ng-include src=" 'app/template/partial/menuLeft.html' "></ng-include>
+    <div class="col-lg-10 panel panel-default principal">
+        <div class="panel-body">
+            <div class="page-header">
+                <CENTER><h1>REPORTES</h1></center>
+            </div>
         </div>
-      </div>
+        <div class="col-lg-offset-3 col-lg-6 divgene">
+            <div id="contenedor1">
+                <div class="f1">
+                    <div class="c1">
+
+                        <a href="#!/repGeneralPersonas" class="Gpersonal lin">
+                            <div class="btns">
+                                <label>Reporte</label><br>
+                                <i class=" b1 fa fa-users" aria-hidden="true"></i><br>
+                                <label>General de personas</label><br>
+                                <label>en la empresa</label><br>
+                            </div>
+                        </a>
+
+                        <a href="#!/repGeneralUsuarios" class="Gusu lin">
+                            <div class="btns">
+                                <label>Reporte</label><br>
+                                <i class="b2 fa fa-user-secret" aria-hidden="true"></i><br>
+                                <label>General de usuario</label><br>
+                                <label>en el sistema</label><br>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="esf">
+                        <div class="fh1 lin1">
+                            <label class="pala">Reporte</label><br>
+                            <label  class="pala">de entrada y salida</label><br>
+                            <label  class="pala">por fecha</label>
+                        </div>
+                        <div class="fh2">
+                            <label class="pala">Seleccione la fecha a buscar</label>
+
+                            <form class="form-inline labelfh2">
+                                <div class="form-group">
+                                    <label for="exampleInputName2">Hora inicial</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputName2">Hora final</label>
+                                </div>
+                            </form>
+
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                                </div>
+                            </form>
+                            <div class="re">
+                                <a href="#!/repPorFecha" class="btn btn-default btn-block">Buscar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div   class="esper lin">
+                    <div>
+                        <label>Reporte</label><br>
+                        <label>de entrada y salida</label><br>
+                        <label>por persona</label><br>
+                        <i class="b3 fa fa-user" aria-hidden="true"></i><br>
+                        <label>Digite el N. de cedula o</label><br>
+                        <label>el nombre</label><br><br>
+                        <input type="text" class="form-control a"><br>
+                        <a href="#!/repPorPersona" class="btn btn-default btn-block a">Buscar</a>
+
+                    </div>
+                </div>
+            </div>
+            <div id="contenedor2">
+                <a href="#!/repPorCategoria" class="reporcate lin">
+                    <div>
+                        <label>Reporte</label> <br>
+                        <label>CATEGORIAS</label> <br><br>
+                        <i class="b5 fa fa-building-o" aria-hidden="true"></i>
+                        <i class="b5 fa fa-building-o" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="esfh">
+
+                    <div class="fh1 lin1">
+                        <label>Reporte</label><br>
+                        <label>de entrada y salida</label><br>
+                        <label>por fecha y hora</label>
+                    </div>
+                    <div class="fh3">
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="fecha" class="col-sm-5 control-label lin1">Fecha:</label>
+                                <div class="col-sm-7">
+                                    <input type="date" class="form-control" id="fecha">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="horai" class="col-sm-5 control-label lin1">Hora Inicial:</label>
+                                <div class="col-sm-7">
+                                    <input type="time" class="form-control" id="horai">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="horafi" class="col-sm-5 control-label lin1">Hora Final:</label>
+                                <div class="col-sm-7">
+                                    <input type="time" class="form-control" id="horafi">
+                                </div>
+                            </div>
+                            <a href="#!/repPorFechaYHora" class="btn btn-default btn-block">Buscar</a>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
 </div>
+
+

@@ -1,2 +1,202 @@
+.divgene{
+    padding-top: 50px;
+}
+
+#contenedor1{
+    display: flex; flex-direction: row; margin-bottom: 10px;
+}
+.f1{
+    flex-basis: 70%; display: flex; flex-direction: column; margin-right: 10px;
+}
+.c1{
+    display: flex; flex-direction: row; margin-bottom: 10px;
+}
+
+.Gpersonal{
+    background-color: #e06666;
+    border: solid 1px #000; flex-basis: 50%;
+    margin-right: 10px;
+    height: 200px;
+}
+.Gusu{
+    background-color: #6FA8DC;
+    border: solid 1px #000; flex-basis: 50%;
+}
+.esf{
+    background-color: #351C75;
+    border: solid 1px #000; height: 200px;
+    display: flex; flex-direction: row;
+}
+.pala{
+    color: #ffffff;
+}
+.esper{
+    background-color: #93C47D;
+    border: solid 1px #000; flex-basis: 30%;
+}
+
+#contenedor2{
+    display: flex; flex-direction: row; height: 200px;
+}
+.reporcate{
+    background-color: #FF9900;
+    border: solid 1px #000; flex-basis: 40%; margin-right: 10px;
+}
+.esfh{
+    background-color: #F6B26B;
+    border: solid 1px #000; flex-basis: 80%;
+    display: flex; flex-direction: row;
+}
+.fh1{
+    flex-basis: 35%;
+}
+.fh2{
+    flex-basis: 65%;
+    padding: 12px;
+    padding-top: 35px;
+}
+.fh3{
+    flex-basis: 65%;
+    padding: 10px;
+}
+.fh4{
+    flex-basis: 35%;
+}
+.fh5{
+    flex-basis: 65%;
+    padding: 10px;
+    padding-top: 35px;
+}
+
+.fh2 input {
+    width: 150px !important;
+}
+.fh5 input{
+    width: 142px !important;
+}
+
+.fh2 .labelfh2 > div {
+    color: white;
+    width: 150px !important;
+}
+.fh5 .labelfh5 > div{
+    color: white;
+    width: 150px !important;
+}
+
+.fh3 > label {
+    width: 50px !important;
+}
+.re{
+    margin-top: 10px;
+}
+.a{
+    width: 200px;
+    margin-left:  9px;
+}
+.btns{
+    padding-top: 10px;
+}
+.b1{
+    font-size: 6em;
+}
+.b2{
+    font-size: 6em;
+}
+.b3{
+    font-size: 8em;
+}
+.b5{
+    font-size: 6em;
+}
+
+.h{
+    float: right;
+    width: 200px;
+    padding-top: 10px;
+    alignment-adjust: central;
+}
+
+.lin{
+    text-align: center;
+    color: black;
+    font-family: sans-serif;
+    font-size: medium;
+    font-style: oblique;
+    float: center;
+}
+.lin:hover{
+    text-decoration: none;
+    color: white;
+}
+.lin1{
+    padding-top: 50px;
+    text-align: center;
+    color: black;
+    font-family: sans-serif;
+    font-size: medium;
+    font-style: oblique;
+    float: center;
+}
+.lin1:hover{
+    text-decoration: none;
+    color: white;
+}
+.lin2{
+    padding-top: 50px;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: medium;
+    font-style: oblique;
+    float: center;
+}
+.lin2:hover{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+/*Estilo para reporte por categoria*/
+#contenedorC{
+    display: flex; flex-direction: row; margin-bottom: 10px;
+    margin-top: 50px
+}
+.f1C{
+    flex-basis: 70%; display: flex; flex-direction: column; margin-right: 10px;
+}
+.c1C{
+    display: flex; flex-direction: row; margin-bottom: 10px;
+}
+.GpersonalC{
+    background-color: #93C47D;
+    border: solid 1px #000;
+    flex-basis: 30%;
+}
+
+.esfhC{
+    background-color: #351C75;
+    border: solid 1px #000;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    border: solid 1px #000;
+    flex-basis: 70%;
+    margin-left: 10px;
+    margin-top: 60px;
+}
+
+.esfC{
+    background-color: #e06666;
+    border: solid 1px #000; flex-basis: 100%;
+    display: flex; flex-direction: row;
+    margin-left: 10px;
+    height: 200px;
+}
+.gp{
+    padding-top: 70px;
+}
 
 
