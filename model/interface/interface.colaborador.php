@@ -10,7 +10,7 @@ interface IColaborador {
 
     public function update(colaborador $colaborador);
 
-    public function delete($id);
+    public function delete($id, $logico);
 
     public function search($cedula);
 }

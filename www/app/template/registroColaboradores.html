@@ -44,8 +44,8 @@
                             <td>{{colaborador.col_telefono}}</td>
                             <td>{{colaborador.col_direccion}}</td>
                             <td>{{colaborador.col_correo}}</td>
-                            <td><i title="Editar" class="glyphicon glyphicon-pencil iconoTabla" data-toggle="modal" data-target="#editarColaborador"></i>
-                                <i title="Eliminar" class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#eliminarColaborador"></i></td>
+                            <td><i ng-click="editar(colaborador)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
+                                <i ng-click="eliminar(colaborador)" class="glyphicon glyphicon-trash"></i></td>
                         </tr>
 
                     </table>
@@ -150,31 +150,37 @@
                     Editar Colaborador</h4>
             </div>
             <div class="modal-body">
-                <form>
-                    <div class="alert alert-success">
-
-                        <center>Colaborador Editado</center>
+                <form ng-submit="submitEditarColaborador()">
+                    <div class="alert alert-success" ng-show="colaboradorEditado">
+                        <center>Colaborador Editado con exito</center>
                     </div>
 
+                    <div class="form-group" hidden>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
+                            </span>
+                            <input type="text" class="form-control" ng-model="edit.id" aria-label="..." readonly placeholder="id">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." readonly placeholder="CEDULA">
+                            <input type="text" class="form-control" ng-model="edit.cedula" aria-label="..." readonly placeholder="CEDULA">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="NOMBRE">
+                            <input type="text" class="form-control" ng-model="edit.nombre" aria-label="..." placeholder="NOMBRE">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user-circle"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="APELLIDO">
+                            <input type="text" class="form-control" ng-model="edit.apellido" aria-label="..." placeholder="APELLIDO">
                         </div>
                     </div>
                     <div class="form-group">
@@ -193,24 +199,24 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="TELEFONO">
+                            <input type="text" class="form-control" ng-model="edit.telefono" aria-label="..." placeholder="TELEFONO">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-map-marker iconoForm3"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="DIRECCION">
+                            <input type="text" class="form-control" ng-model="edit.direccion" aria-label="..." placeholder="DIRECCION">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope-o"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="..." placeholder="CORREO">
+                            <input type="text" class="form-control" ng-model="edit.correo" aria-label="..." placeholder="CORREO">
                         </div>
                     </div>
-                    <button ng-click="procesarRegistroColaborador()" type="button" class="btn btn-primary btn-block btn-sm">Editar</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-sm">Editar</button>
                 </form>
             </div>
         </div>
@@ -229,16 +235,15 @@
                     Eliminar Colaborador</h4>
             </div>
             <div class="modal-body">
-                <div class="alert alert-success">
+                <div class="alert alert-success" ng-show="colaboradorEliminado"> 
                     <center>Colaborador Eliminado</center>
                 </div>
                 <center>
-                <p>Esta seguro?</p>
-                <h3>Se va a eliminar el colaborador</h3>
-                <p>NOMBRE DEL COLABORADOR</p>
+                    <h4>¿Esta seguro?</h4>
+                    <p>Se va a eliminar el colaborador</p>
+                    <h3>{{nombre}}</h3>
                 </center>
-                <button ng-click="procesarRegistroColaborador()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
-                <button ng-click="procesarRegistroColaborador()" type="button" class="btn btn-default btn-block btn-sm">Cancelar</button>
+                <button ng-click="submitEliminarColaborador()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
             </div>
         </div>
     </div>
