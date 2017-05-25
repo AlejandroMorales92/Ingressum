@@ -58,7 +58,7 @@ class usuarioDAO extends dataSource implements IUsuario {
         ':password' => $usuario->getPassword($this->getConfig()->getHash()),
         ':id' => $usuario->getId()
     );
-    $this->execute($sql, $params);
+    return $this->execute($sql, $params);
   }
 
 }

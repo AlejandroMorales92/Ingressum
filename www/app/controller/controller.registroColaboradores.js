@@ -93,8 +93,8 @@ angular.module('IngressumApp').controller('registroColaboradoresController', ['$
             $scope.ideliminar = dato.col_id;
         };
         
-        $scope.submitEliminarColaborador = function (ideliminar) {
-            agregarColaborador.eliminarCol({id: ideliminar}).then(function successCallback(response) {
+        $scope.submitEliminarColaborador = function () {
+            agregarColaborador.eliminarCol({id: $scope.ideliminar}).then(function successCallback(response) {
                 $scope.colaboradorEliminado = false;
                 if (response.data.code == 500) {
                 } else {
@@ -104,7 +104,7 @@ angular.module('IngressumApp').controller('registroColaboradoresController', ['$
                     }, 700);
                     $timeout(function () {
                         // $route.reload();
-                        //window.location.reload();
+                        window.location.reload();
                     }, 1000);
                 }
             }, function errorCallback(response) {

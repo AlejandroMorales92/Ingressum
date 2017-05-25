@@ -6,7 +6,7 @@
   <Sch Cm="" nm="public">
     <Tbl UsSo="1" nm="ces_colaborador">
       <Cm>Almacena la informacion requerida de los colaboradores</Cm>
-      <TblOpts/>
+      <TblOpts>WITHOUT OIDS</TblOpts>
       <Pk ClNs="col_id" nm="pkces_colaborador"/>
       <Cl au="1" df="nextval('ces_colaborador_col_id_seq'::regclass)" nm="col_id" nu="0">
         <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
@@ -61,7 +61,7 @@
     </Tbl>
     <Tbl UsSo="1" nm="ces_control">
       <Cm>Almacena los registros de entrada y salida de los colaboradores y visitantes</Cm>
-      <TblOpts/>
+      <TblOpts>WITHOUT OIDS</TblOpts>
       <Pk ClNs="cot_id" nm="pkces_control"/>
       <Cl au="1" df="nextval('ces_control_cot_id_seq'::regclass)" nm="cot_id" nu="0">
         <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
@@ -122,7 +122,7 @@
         <ClPr cdCl="usu_id_entrada" prCl="usu_id"/>
       </Fk>
       <Fk deAc="1" nm="fk_ces_control_ces_usuario_salida" prLkCl="usu_id" upAc="1">
-        <PrTb mn="0" nm="ces_usuario" oe="1" sch="public" zr="0"/>
+        <PrTb mn="0" nm="ces_usuario" oe="1" sch="public" zr="1"/>
         <CdTb mn="1" nm="ces_control" oe="0" sch="public" zr="1"/>
         <ClPr cdCl="usu_id_salida" prCl="usu_id"/>
       </Fk>
@@ -143,9 +143,9 @@
     </Tbl>
     <Tbl UsSo="1" nm="ces_rol">
       <Cm>Almacena la clase de usuario( Administrador, Celador)</Cm>
-      <TblOpts/>
+      <TblOpts>WITHOUT OIDS</TblOpts>
       <Pk ClNs="rol_id" nm="pkces_rol"/>
-      <Cl au="1" df="" nm="rol_id" nu="0">
+      <Cl au="1" df="nextval('ces_rol_rol_id_seq'::regclass)" nm="rol_id" nu="0">
         <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
         <Cm>Identidad unica del rol</Cm>
       </Cl>
@@ -158,9 +158,9 @@
     </Tbl>
     <Tbl UsSo="1" nm="ces_usuario">
       <Cm>Almacena la informacion requerida de los usuario</Cm>
-      <TblOpts/>
+      <TblOpts>WITHOUT OIDS</TblOpts>
       <Pk ClNs="usu_id" nm="pkces_usuario"/>
-      <Cl au="1" df="" nm="usu_id" nu="0">
+      <Cl au="1" df="nextval('ces_usuario_usu_id_seq'::regclass)" nm="usu_id" nu="0">
         <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
         <Cm>Identidad unica del usuario</Cm>
       </Cl>
@@ -350,4 +350,5 @@
     <TreePath>/Schemas (1)/public</TreePath>
     <TreePath>/Diagrams (1)</TreePath>
   </TreePaths>
+  <SqlTexts/>
 </Db>
