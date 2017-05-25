@@ -2,13 +2,21 @@
 
 class usuarioDAO extends dataSource implements IUsuario {
   
-  public function delete($id) {
-    $sql = 'DELETE FROM ces_usuario WHERE usu_id = :id';
-    $params = array(
-        ':id' => $id
-    );
-    return $this->execute($sql, $params);
-  }
+  public function delete($id, $logico = true) {
+        if ($logico === true) {
+            $sql = 'UPDATE ces_usuario SET usu_deleted_at = now() WHERE usu_id = :id';
+            $params = array(
+                ':id' => $id
+            );
+            return $this->execute($sql, $params);
+        } else if ($logico === false) {
+            $sql = 'DELETE FROM ces_usuario WHERE usu_id = :id AND usu_deleted_at IS NULL';
+            $params = array(
+                ':id' => (integer) $id
+            );
+            return $this->execute($sql, $params);
+        }
+    }
 
   public function insert(\usuario $usuario) {
     $sql = 'INSERT INTO ces_usuario (rol_id, usu_cedula, usu_nombre, usu_apellido, usu_telefono, usu_alias, usu_password) VALUES (:rolId, :cedula, :nombre, :apellido, :telefono, :alias, :password)';

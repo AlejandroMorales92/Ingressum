@@ -9,4 +9,9 @@ angular.module('IngressumApp').service('registroUsuarioService', ['$http', funct
     this.editarUsu = function (data) {
       return $http.post('http://localhost/Ingressum/www/server.php/editarUsuario', $.param(data));
     };
+    
+    this.eliminarUsu = function (data) {
+      return $http.post('http://localhost/Ingressum/www/server.php/eliminarUsuario', $.param(data));
+    };
+    
 }]);

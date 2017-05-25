@@ -34,8 +34,6 @@ angular.module('IngressumApp').controller('sistemaUsuariosController', ['$scope'
                 $scope.usuarioRegistrado = false;
                 $scope.dataRegistrarUsuario = {};
                 if (response.data.code == 500) {
-
-
                 } else {
                     $scope.usuarioRegistrado = true;
                     $scope.dataRegistrarUsuario = '';
@@ -84,4 +82,31 @@ angular.module('IngressumApp').controller('sistemaUsuariosController', ['$scope'
                 console.error(response);
             });
         };
+        
+        
+        $scope.eliminar = function (dato) {
+            $('#eliminarUsuario').modal('toggle');
+            $scope.nombre = dato.usu_nombre;
+            $scope.ideliminar = dato.usu_id;
+        };
+        
+        $scope.submitEliminarUsuario = function () {
+            agregarUsuario.eliminarUsu({id: $scope.ideliminar}).then(function successCallback(response) {
+                $scope.usuarioEliminado = false;
+                if (response.data.code == 500) {
+                } else {
+                    $scope.usuarioEliminado = true;
+                    $timeout(function () {
+                        $('#eliminarUsuario').modal('toggle');
+                    }, 700);
+                    $timeout(function () {
+                        // $route.reload();
+                        window.location.reload();
+                    }, 1000);
+                }
+            }, function errorCallback(response) {
+                console.error(response);
+            });
+        };
+        
     }]);
