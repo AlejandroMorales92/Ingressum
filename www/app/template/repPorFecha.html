@@ -5,12 +5,38 @@
   <div class="col-lg-10 panel panel-default principal">
     <div class="panel-body">
       <div class="page-header">
-        <CENTER><h3>REPORTE DE ENTRADA Y SALIDA POR FECHA</h3>
+        <a class="glyphicon glyphicon-menu-left" href="#!/reportes"></a><CENTER><h3>REPORTE DE ENTRADA Y SALIDA POR FECHA</h3>
             <h4>DEL 30/05/2017 AL 2/06/2017 </h4></center>
       </div>
       <div class="row">
-        <div class="col-lg-12">
-            TABLA
+        <div class="col-lg-10 col-lg-offset-1">
+          <div class="table-responsive ">
+            <table class="table">
+              <tr>
+                <th>Registro de Entrada</th>
+                <th>Registro de Salida</th>
+                <th>Cédula</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Categoria</th>
+              </tr>
+              <tr ng-repeat="reporte in reportes">
+                <td>{{reporte.cot_fecha_entrada}}</td>
+                <td>{{reporte.cot_fecha_salida}}</td>
+                <td>{{reporte.col_cedula}}</td>
+                <td>{{reporte.col_nombre}}</td>
+                <td>{{reporte.col_apellido}}</td>
+                <td>{{reporte.col_categoria}}</td>
+              </tr>
+
+            </table>
+            <nav aria-label="...">
+              <ul class="pager">
+                <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+                <li class="next"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </div>

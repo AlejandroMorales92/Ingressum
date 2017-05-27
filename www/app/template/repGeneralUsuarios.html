@@ -1,15 +1,40 @@
-
 <ng-include src=" 'app/template/partial/menuTop.html' "></ng-include>
 <div class="col-lg-12 body">
   <ng-include src=" 'app/template/partial/menuLeft.html' "></ng-include>
   <div class="col-lg-10 panel panel-default principal">
     <div class="panel-body">
       <div class="page-header">
-        <CENTER><h3>REPORTE GENERAL DE USUARIOS</h3></center>
+        <a class="glyphicon glyphicon-menu-left" href="#!/reportes"></a><CENTER><h3>REPORTE GENERAL DE USUARIOS</h3></center>
       </div>
       <div class="row">
-        <div class="col-lg-12">
-            TABLA
+        <div class="col-lg-10 col-lg-offset-1">
+          <div class="table-responsive ">
+            <table class="table">
+              <tr>
+                <th>Cédula</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Telefono</th>
+                <th>Nombre de Usuario</th>
+                <th>Rol</th>
+              </tr>
+              <tr ng-repeat="reporte in reportes">
+                <td>{{reporte.usu_cedula}}</td>
+                <td>{{reporte.usu_nombre}}</td>
+                <td>{{reporte.usu_apellido}}</td>
+                <td>{{reporte.usu_telefono}}</td>
+                <td>{{reporte.usu_alias}}</td>
+                <td>{{reporte.rol_nombre}}</td>
+              </tr>
+
+            </table>
+            <nav aria-label="...">
+              <ul class="pager">
+                <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+                <li class="next"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </div>
