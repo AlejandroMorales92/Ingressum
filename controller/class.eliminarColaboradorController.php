@@ -4,15 +4,9 @@
     try {
       $this->loadTablecolaborador();
 
-      $colaborador = new colaborador();
-      $colaborador->setId($request->getParam('id'));
-      
-      
-
       $colaboradorDAO = new colaboradorDAOExt($this->getConfig());
-      $respuesta1 = $colaboradorDAO->delete($colaborador);
-      
-      
+      $respuesta1 = $colaboradorDAO->delete($request->getParam('id'));
+ 
       $respuesta2 = array(
           'code' => ($respuesta1 > 0) ? 200 : 500,
           'datos' => $respuesta1
