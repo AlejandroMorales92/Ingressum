@@ -1,7 +1,7 @@
 <?php
 
 class controlDAO extends dataSource implements IControl {
-  
+
   public function delete($id) {
     $sql = 'DELETE FROM ces_control WHERE cot_id = :id';
     $params = array(
@@ -15,18 +15,17 @@ class controlDAO extends dataSource implements IControl {
     $params = array(
         ':col_id' => $control->getColId(),
         ':vehiculo' => $control->getVehiculo(),
-        ':placa'=>$control->getPlaca(),
-        ':observacion'=>$control->getObservacion(),
-        ':fecha_entrada'=>$control->getFechaEntrada(),
-        ':fecha_salida'=>$control->getFechaSalida(),
-        ':usu_entrada'=>$control->getUsuIdEntrada(),
-        ':usu_salida'=>$control->getUsuIdSalida(),
-        
+        ':placa' => $control->getPlaca(),
+        ':observacion' => $control->getObservacion(),
+        ':fecha_entrada' => $control->getFechaEntrada(),
+        ':fecha_salida' => $control->getFechaSalida(),
+        ':usu_entrada' => $control->getUsuIdEntrada(),
+        ':usu_salida' => $control->getUsuIdSalida(),
     );
     return $this->execute($sql, $params);
   }
 
-  public function search($id) {
+  public function search($user, $password) {
     $sql = 'SELECT cot_id,cot_vehiculo,cot_placa,cot_observacion,cot_fecha_entrada,cot_fecha_salida,usu_id_entrada,usu_id_salida,cot_created_at,cot_updated_at,cot_deleted_at FROM ces_control WHERE col_id = :id ';
     $params = array(
         ':id' => $id
@@ -52,12 +51,12 @@ class controlDAO extends dataSource implements IControl {
     $params = array(
         ':col_id' => $control->getColId(),
         ':vehiculo' => $control->getVehiculo(),
-        ':placa'=>$control->getPlaca(),
-        ':observacion'=>$control->getObservacion(),
-        ':fecha_entrada'=>$control->getFechaEntrada(),
-        ':fecha_salida'=>$control->getFechaSalida(),
-        ':usu_entrada'=>$control->getUsuIdEntrada(),
-        ':usu_salida'=>$control->getUsuIdSalida()
+        ':placa' => $control->getPlaca(),
+        ':observacion' => $control->getObservacion(),
+        ':fecha_entrada' => $control->getFechaEntrada(),
+        ':fecha_salida' => $control->getFechaSalida(),
+        ':usu_entrada' => $control->getUsuIdEntrada(),
+        ':usu_salida' => $control->getUsuIdSalida()
     );
     $this->execute($sql, $params);
   }

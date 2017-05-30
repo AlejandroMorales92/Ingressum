@@ -55,11 +55,11 @@ angular.module('IngressumApp').config(['$routeProvider', '$httpProvider', functi
                     controller: 'repGeneralUsuariosController',
                     templateUrl: 'app/template/repGeneralUsuarios.html'
                 }).
-                when('/repPorPersona', {
+                when('/repPorPersona/:cedula', {
                     controller: 'repPorPersonaController',
                     templateUrl: 'app/template/repPorPersona.html'
                 }).
-                when('/repPorFecha', {
+                when('/repPorFecha/:fechaInicial/:fechaFinal', {
                     controller: 'repPorFechaController',
                     templateUrl: 'app/template/repPorFecha.html'
                 }).
