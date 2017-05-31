@@ -1,250 +1,259 @@
 <ng-include src=" 'app/template/partial/menuTop.html' "></ng-include>
 <div class="col-lg-12 body">
-    <ng-include src=" 'app/template/partial/menuLeft.html' "></ng-include>
-    <div class="col-lg-10 panel panel-default principal">
-        <div class="panel-body">
-            <div class="page-header">
-                <CENTER><h1>REGISTRO DE COLABORADORES</h1></center>
-            </div>
-        </div>
-
-
-        <div class="row" style="margin-top: 0px;">
-            <div class="col-lg-7 col-lg-offset-1">
-                <h4><img class="img-circle iconoAgregar" src="img/IconoAgregar.png" data-toggle="modal" data-target="#nuevoColaborador">Agregar un Nuevo Colaborador</h4>
-            </div>
-            <div class="col-lg-3" style="margin-top: 45px;">
-                <form class="form-inline navbar-form navbar-left">
-                    <div class="form-group formulario">
-                        <input type="text" class="form-control" placeholder="Buscar">
-                    </div>
-                    <button type="submit" class="btn btn-default botonBuscar">Buscar</button>
-                </form>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 0px;">
-            <div class="col-lg-10 col-lg-offset-1" style="margin-top: 20px;">
-                <div class="table-responsive ">
-                    <table class="table">
-                        <tr>
-                            <th>Cédula</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                            <th>Categoria</th>
-                            <th>Teléfono</th>
-                            <th>Dirección</th>
-                            <th>Correo</th>
-                            <th>Acciones</th>
-                        </tr>
-                        <tr ng-repeat="colaborador in colaboradores">
-                            <td>{{colaborador.col_cedula}}</td>
-                            <td>{{colaborador.col_nombre}}</td>
-                            <td>{{colaborador.col_apellido}}</td>
-                            <td>{{colaborador.col_categoria}}</td>
-                            <td>{{colaborador.col_telefono}}</td>
-                            <td>{{colaborador.col_direccion}}</td>
-                            <td>{{colaborador.col_correo}}</td>
-                            <td><i ng-click="editar(colaborador)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
-                                <i ng-click="eliminar(colaborador)" class="glyphicon glyphicon-trash"></i></td>
-                        </tr>
-
-                    </table>
-                    <nav aria-label="...">
-                        <ul class="pager">
-                            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
-                            <li class="next"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-
+  <ng-include src=" 'app/template/partial/menuLeft.html' "></ng-include>
+  <div class="col-lg-10 panel panel-default principal">
+    <div class="panel-body">
+      <div class="page-header">
+        <CENTER><h1>REGISTRO DE COLABORADORES</h1></center>
+      </div>
     </div>
+
+
+    <div class="row" style="margin-top: 0px;">
+      <div class="col-lg-7 col-lg-offset-1">
+        <h4><img class="img-circle iconoAgregar" src="img/IconoAgregar.png" data-toggle="modal" data-target="#nuevoColaborador">Agregar un Nuevo Colaborador</h4>
+      </div>
+      <div class="col-lg-3" style="margin-top: 45px;">
+        <form class="form-inline navbar-form navbar-left">
+          <div class="form-group formulario">
+            <input type="text" class="form-control" placeholder="Buscar">
+          </div>
+          <button type="submit" class="btn btn-default botonBuscar">Buscar</button>
+        </form>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 0px;">
+      <div class="col-lg-10 col-lg-offset-1" style="margin-top: 20px;">
+        <div class="table-responsive ">
+          <table class="table">
+            <tr>
+              <th>Cédula</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Categoria</th>
+              <th>Teléfono</th>
+              <th>Dirección</th>
+              <th>Correo</th>
+              <th>Acciones</th>
+            </tr>
+            <tr ng-repeat="colaborador in colaboradores">
+              <td>{{colaborador.col_cedula}}</td>
+              <td>{{colaborador.col_nombre}}</td>
+              <td>{{colaborador.col_apellido}}</td>
+              <td>{{colaborador.col_categoria}}</td>
+              <td>{{colaborador.col_telefono}}</td>
+              <td>{{colaborador.col_direccion}}</td>
+              <td>{{colaborador.col_correo}}</td>
+              <td><i ng-click="editar(colaborador)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
+                <i ng-click="eliminar(colaborador)" class="glyphicon glyphicon-trash"></i></td>
+            </tr>
+
+          </table>
+          <nav aria-label="...">
+            <ul class="pager">
+              <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+              <li class="next"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 
 <!-- MODAL NUEVO COLABORADOR-->
 <div class="modal fade bs-example-modal-sm" tabindex="-1" id="nuevoColaborador" role="dialog" aria-labelledby="mySmallModalLabel">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus-circle"></i>
-                    Nuevo Colaborador</h4>
-            </div>
-            <div class="modal-body">
-                <form ng-submit="submit()">
-                    <div class="alert alert-success" ng-show="colaboradorRegistrado">
-                        <center>Colaborador Creado Con Exito</center>
-                    </div>
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus-circle"></i>
+          Nuevo Colaborador</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="submit()">
+          <div class="alert alert-success" ng-show="colaboradorRegistrado">
+            <center>Colaborador Creado Con Exito</center>
+          </div>
 
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
-                            </span>
-                            <input ng-model="dataRegistrarColaborador.cedula" type="text" class="form-control" aria-label="..." placeholder="CEDULA" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-                            </span>
-                            <input ng-model="dataRegistrarColaborador.nombre" type="text" class="form-control" aria-label="..." placeholder="NOMBRE" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user-circle"></i>
-                            </span>
-                            <input ng-model="dataRegistrarColaborador.apellido" type="text" class="form-control" aria-label="..." placeholder="APELLIDO" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-building iconoForm"></i>
-                            </span>
-                            <select ng-model="dataRegistrarColaborador.categoria" class="form-control input-sm" aria-label="..." required>
-                                <option>ALLEN PRO</option>
-                                <option>SEMILLAS DEL PACIFICO</option>
-                                <option>MUNDO MAGICO</option>
-                                <option>CONTRATISTA</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
-                            </span>
-                            <input ng-model="dataRegistrarColaborador.telefono" type="text" class="form-control" aria-label="..." placeholder="TELEFONO" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-map-marker iconoForm3"></i>
-                            </span>
-                            <input ng-model="dataRegistrarColaborador.direccion" type="text" class="form-control" aria-label="..." placeholder="DIRECCION" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope-o"></i>
-                            </span>
-                            <input ng-model="dataRegistrarColaborador.correo" type="text" class="form-control" aria-label="..." placeholder="CORREO" required>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block btn-sm">Crear</button>
-                </form>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
+              </span>
+              <input pattern="^[0-9]+" ng-trim="true" ng-model="dataRegistrarColaborador.cedula" type="text" class="form-control" aria-label="..." placeholder="CEDULA" required>
             </div>
-        </div>
+            <span ng-show="inputError.cedula" id="helpBlock" class="help-block alert alert-danger">{{inputError.cedula}}</span>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+              </span>
+              <input pattern="^[a-z A-Z]+" ng-trim="true" ng-model="dataRegistrarColaborador.nombre" type="text" class="form-control" aria-label="..." placeholder="NOMBRE" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user-circle"></i>
+              </span>
+              <input pattern="^[a-z A-Z]+" ng-trim="true" ng-model="dataRegistrarColaborador.apellido" type="text" class="form-control" aria-label="..." placeholder="APELLIDO" required>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-building iconoForm"></i>
+              </span>
+              <select ng-model="dataRegistrarColaborador.categoria" class="form-control input-sm" aria-label="..." required>
+                <option value="">SELECCIONAR CATEGORIA</option>
+                <option value="ALLEN PRO">ALLEN PRO</option>
+                <option value="SEMILLAS DEL PACIFICO">SEMILLAS DEL PACIFICO</option>
+                <option value="MUNDO MAGICO">MUNDO MAGICO</option>
+                <option value="CONTRATISTA">CONTRATISTA</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
+              </span>
+              <input pattern="^[0-9]+" ng-trim="true" ng-model="dataRegistrarColaborador.telefono" type="tel" class="form-control" aria-label="..." placeholder="TELEFONO" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-map-marker iconoForm3"></i>
+              </span>
+              <input ng-trim="true" ng-model="dataRegistrarColaborador.direccion" type="text" class="form-control" aria-label="..." placeholder="DIRECCION" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope-o"></i>
+              </span>
+              <input ng-model="dataRegistrarColaborador.correo" type="email" class="form-control" aria-label="..." placeholder="CORREO" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-sm">Crear</button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
+
+
+
 
 
 <!-- MODAL EDITAR COLABORADOR-->
 <div class="modal fade bs-example-modal-sm" tabindex="-1" id="editarColaborador" role="dialog" aria-labelledby="mySmallModalLabel">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-pencil"></i>
-                    Editar Colaborador</h4>
-            </div>
-            <div class="modal-body">
-                <form ng-submit="submitEditarColaborador()">
-                    <div class="alert alert-success" ng-show="colaboradorEditado">
-                        <center>Colaborador Editado con exito</center>
-                    </div>
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-pencil"></i>
+          Editar Colaborador</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="submitEditarColaborador()">
+          <div class="alert alert-success" ng-show="colaboradorEditado">
+            <center>Colaborador Editado con exito</center>
+          </div>
 
-                    <div class="form-group" hidden>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
-                            </span>
-                            <input type="text" class="form-control" ng-model="edit.id" aria-label="..." readonly placeholder="id">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
-                            </span>
-                            <input type="text" class="form-control" ng-model="edit.cedula" aria-label="..." readonly placeholder="CEDULA">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-                            </span>
-                            <input type="text" class="form-control" ng-model="edit.nombre" aria-label="..." placeholder="NOMBRE">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user-circle"></i>
-                            </span>
-                            <input type="text" class="form-control" ng-model="edit.apellido" aria-label="..." placeholder="APELLIDO">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-building iconoForm"></i>
-                            </span>
-                            <select class="form-control input-sm" ng-model="edit.categoria" aria-label="...">
-                                <option>ALLEN PRO</option>
-                                <option>SEMILLAS DEL PACIFICO</option>
-                                <option>MUNDO MAGICO</option>
-                                <option>CONTRATISTA</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
-                            </span>
-                            <input type="text" class="form-control" ng-model="edit.telefono" aria-label="..." placeholder="TELEFONO">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-map-marker iconoForm3"></i>
-                            </span>
-                            <input type="text" class="form-control" ng-model="edit.direccion" aria-label="..." placeholder="DIRECCION">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope-o"></i>
-                            </span>
-                            <input type="text" class="form-control" ng-model="edit.correo" aria-label="..." placeholder="CORREO">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block btn-sm">Editar</button>
-                </form>
+          <div class="form-group" hidden>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
+              </span>
+              <input type="text" class="form-control" ng-model="edit.id" aria-label="..." readonly placeholder="id">
             </div>
-        </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
+              </span>
+              <input type="text" class="form-control" ng-model="edit.cedula" aria-label="..." readonly placeholder="CEDULA">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+              </span>
+              <input type="text" class="form-control" ng-model="edit.nombre" aria-label="..." placeholder="NOMBRE">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user-circle"></i>
+              </span>
+              <input type="text" class="form-control" ng-model="edit.apellido" aria-label="..." placeholder="APELLIDO">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-building iconoForm"></i>
+              </span>
+              <select class="form-control input-sm" ng-model="edit.categoria" aria-label="...">
+                <option>ALLEN PRO</option>
+                <option>SEMILLAS DEL PACIFICO</option>
+                <option>MUNDO MAGICO</option>
+                <option>CONTRATISTA</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
+              </span>
+              <input type="text" class="form-control" ng-model="edit.telefono" aria-label="..." placeholder="TELEFONO">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-map-marker iconoForm3"></i>
+              </span>
+              <input type="text" class="form-control" ng-model="edit.direccion" aria-label="..." placeholder="DIRECCION">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope-o"></i>
+              </span>
+              <input type="text" class="form-control" ng-model="edit.correo" aria-label="..." placeholder="CORREO">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-sm">Editar</button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
+
+
+
 
 
 
 <!-- MODAL ELIMINAR COLABORADOR-->
 <div class="modal fade bs-example-modal-sm" tabindex="-1" id="eliminarColaborador" role="dialog" aria-labelledby="mySmallModalLabel">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
-                    Eliminar Colaborador</h4>
-            </div>
-            <div class="modal-body">
-                <div class="alert alert-success" ng-show="colaboradorEliminado"> 
-                    <center>Colaborador Eliminado</center>
-                </div>
-                <center>
-                    <h4>¿Esta seguro?</h4>
-                    <p>Se va a eliminar el colaborador</p>
-                    <h3>{{nombre}}</h3>
-                </center>
-                <button ng-click="submitEliminarColaborador()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
-            </div>
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
+          Eliminar Colaborador</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success" ng-show="colaboradorEliminado">
+          <center>Colaborador Eliminado</center>
         </div>
+        <center>
+          <h4>¿Esta seguro?</h4>
+          <p>Se va a eliminar el colaborador</p>
+          <h3>{{nombre}}</h3>
+        </center>
+        <button ng-click="submitEliminarColaborador()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+      </div>
     </div>
+  </div>
 </div>
