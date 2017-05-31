@@ -84,7 +84,7 @@
                     <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i>
                       </span>
-                      <input ng-model="dataRegistrarUsuario.cedula" type="number" class="form-control" aria-label="..." placeholder="CEDULA" required>
+                      <input pattern="^[0-9]+" ng-model="dataRegistrarUsuario.cedula" type="text" class="form-control" aria-label="..." placeholder="CEDULA" required>
                     </div>
                     <span ng-show="inputError.cedula" id="helpBlock" class="help-block alert alert-danger">{{inputError.cedula}}</span>
                   </div>
@@ -92,7 +92,7 @@
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
                       </span>
-                      <input ng-model="dataRegistrarUsuario.nombre" type="text" class="form-control" aria-label="..." placeholder="NOMBRE" required>
+                      <input pattern="^[a-z A-Z]+" ng-model="dataRegistrarUsuario.nombre" type="text" class="form-control" aria-label="..." placeholder="NOMBRE" required>
                     </div>
                   </div>
                   <div class="form-group">
@@ -106,7 +106,7 @@
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
                       </span>
-                      <input ng-model="dataRegistrarUsuario.telefono" type="tel" class="form-control" aria-label="..." placeholder="TELEFONO" required>
+                      <input pattern="^[0-9]+" ng-model="dataRegistrarUsuario.telefono" type="tel" class="form-control" aria-label="..." placeholder="TELEFONO" required>
                     </div>
                   </div>
                 </div>
