@@ -68,7 +68,7 @@ class agregarColaborador extends controllerExtended {
       $answer['datos']['nombre'] = 'El número máximo de caracteres permitidos es ' . $nombreLen;
     } elseif (!preg_match('/^[a-z A-Z]+/', $colaborador->getNombre())) {
       $answer['code'] = 300;
-      $answer['datos']['cedula'] = 'No es un nombre válido';
+      $answer['datos']['nombre'] = 'No es un nombre válido';
     }
 
 // Validación apellido
@@ -94,6 +94,9 @@ class agregarColaborador extends controllerExtended {
     if (strlen($colaborador->getTelefono()) > $telefonoLen) {
       $answer['code'] = 300;
       $answer['datos']['telefono'] = 'El número máximo de caracteres permitidos es ' . $telefonoLen;
+    } elseif (!preg_match('/^[0-9]+/', $colaborador->getTelefono())) {
+      $answer['code'] = 300;
+      $answer['datos']['telefono'] = 'El Teléfono no es un número válido';
     }
 
 
