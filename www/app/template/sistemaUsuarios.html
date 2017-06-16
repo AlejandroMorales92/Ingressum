@@ -4,7 +4,7 @@
   <div class="col-lg-10 panel panel-default principal">
     <div class="panel-body">
       <div class="page-header">
-        <CENTER><h1>SISTEMA DE USUARIOS</h1></center>
+        <CENTER><h1>SISTEMA USUARIOS</h1></center>
       </div>
     </div>
     <div class="row" style="margin-top: 0px;">
@@ -94,13 +94,19 @@
                       </span>
                       <input pattern="^[a-z A-Z]+" ng-model="dataRegistrarUsuario.nombre" type="text" class="form-control" aria-label="..." placeholder="NOMBRE" required>
                     </div>
+                    <p ng-show="dataRegistrarUsuario.nombre == null" class="parrafoError">
+                      <i class="glyphicon glyphicon-exclamation-sign iconoError"></i>El dato digitado NO es valido !!!
+                    </p>
                   </div>
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-user iconoForm"></i>
                       </span>
-                      <input ng-model="dataRegistrarUsuario.apellido" type="text" class="form-control" aria-label="..." placeholder="APELLIDO" required>
+                      <input pattern="^[a-z A-Z]+" ng-model="dataRegistrarUsuario.apellido" type="text" class="form-control" aria-label="..." placeholder="APELLIDO" required>
                     </div>
+                    <p ng-show="dataRegistrarUsuario.apellido == null" class="parrafoError">
+                      <i class="glyphicon glyphicon-exclamation-sign iconoError"></i>El dato digitado NO es valido !!!
+                    </p>
                   </div>
                   <div class="form-group">
                     <div class="input-group">
@@ -108,6 +114,9 @@
                       </span>
                       <input pattern="^[0-9]+" ng-model="dataRegistrarUsuario.telefono" type="tel" class="form-control" aria-label="..." placeholder="TELEFONO" required>
                     </div>
+                    <p ng-show="dataRegistrarUsuario.telefono == null" class="parrafoError">
+                      <i class="glyphicon glyphicon-exclamation-sign iconoError"></i>El dato digitado NO es valido !!!
+                    </p>
                   </div>
                 </div>
               </div>
@@ -254,8 +263,8 @@
                       <span class="input-group-addon"><i class="fa fa-users"></i>
                       </span>
                       <select class="form-control input-sm" ng-model="edit.rol" aria-label="...">
-                        <option value="1">USUARIO</option>
-                        <option value="2">ADMIN</option>
+                        <option value="1">ADMIN</option>
+                        <option value="2">CELADOR</option>
                       </select>
                     </div>
                   </div>

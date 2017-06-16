@@ -2,4 +2,8 @@
   width: 60px;
   height: 60px;
 }
-
+.parrafoError{
+  color: #c9302c;
+  margin-left: 23px;
+  margin-top: 10px;
+}
