@@ -1,65 +1,67 @@
 <!DOCTYPE html>
 <html ng-app="IngressumApp">
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/estiloIndex.css">
-        <link rel="stylesheet" href="css/estiloControl.css">
-        <link rel="stylesheet" href="css/estiloRegistroColaboradores.css">
-        <link rel="stylesheet" href="css/estiloSistemaUsuarios.css">
-        <link rel="stylesheet" href="css/estiloReportes.css">
-        <link rel="stylesheet" href="css/estiloLogin.css">
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estiloIndex.css">
+    <link rel="stylesheet" href="css/estiloControl.css">
+    <link rel="stylesheet" href="css/estiloRegistroColaboradores.css">
+    <link rel="stylesheet" href="css/estiloSistemaUsuarios.css">
+    <link rel="stylesheet" href="css/estiloReportes.css">
+    <link rel="stylesheet" href="css/estiloLogin.css">
+  </head>
+  <body>
 
-        <div ng-view ng-cloak></div>
+    <div ng-view ng-cloak></div>
 
-        <!-- librerias de Angular -->
-        <script src="js/angular-1.6.1/angular.min.js"></script>
-        <script src="js/angular-1.6.1/angular-route.min.js"></script>
-        <script src="js/angular-1.6.1/angular-resource.min.js"></script>
-        <script src="js/angular-middleware.min.js"></script>
-        <script src="js/ngStorage.min.js"></script>
+    <!-- librerias de Angular -->
+    <script src="js/angular-1.6.1/angular.min.js"></script>
+    <script src="js/angular-1.6.1/angular-route.min.js"></script>
+    <script src="js/angular-1.6.1/angular-resource.min.js"></script>
+    <script src="js/angular-middleware.min.js"></script>
+    <script src="js/ngStorage.min.js"></script>
 
-        <!-- librerias jquery -->
-        <script src="js/jquery-1.12.4.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/moment.min.js"></script>
+    <!-- librerias jquery -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.min.js"></script>
 
-        <!-- Enlazamos middleware -->
-        <script src="app/middleware/middleware.comprobarSession.js"></script>
-        <script src="app/middleware/middleware.comprobarNoTenerSession.js"></script>
+    <!-- Enlazamos middleware -->
+    <script src="app/middleware/middleware.comprobarSession.js"></script>
+    <script src="app/middleware/middleware.comprobarNoTenerSession.js"></script>
 
-        <!-- enlazamos app.js y app.config.js -->
-        <script src="app/app.js"></script>
-        <script src="app/app.config.js"></script>
+    <!-- enlazamos app.js y app.config.js -->
+    <script src="app/app.js"></script>
+    <script src="app/app.config.js"></script>
 
-        <!-- Enlazamos service -->
-        <script src="app/service/service.security.js"></script>
-        <script src="app/service/service.colaborador.js"></script>
-        <script src="app/service/service.usuario.js"></script>
-        <script src="app/service/service.reporte.js"></script>
+    <!-- Enlazamos service -->
+    <script src="app/service/service.security.js"></script>
+    <script src="app/service/service.colaborador.js"></script>
+    <script src="app/service/service.usuario.js"></script>
+    <script src="app/service/service.reporte.js"></script>
+    <script src="app/service/service.Buscar.js"></script>
 
-        <!-- enlazamos los controllers -->
-        <script src="app/controller/controller.index.js"></script>
-        <script src="app/controller/controller.control.js"></script>
-        <script src="app/controller/controller.registroColaboradores.js"></script>
-        <script src="app/controller/controller.sistemaUsuarios.js"></script>
-        <script src="app/controller/controller.reportes.js"></script>
-        <script src="app/controller/controller.login.js"></script>
-        <script src="app/controller/controller.repGeneralPersonas.js"></script>
-        <script src="app/controller/controller.repGeneralUsuarios.js"></script>
-        <script src="app/controller/controller.repPorPersona.js"></script>
-        <script src="app/controller/controller.repPorFecha.js"></script>
-        <script src="app/controller/controller.repPorFechaYHora.js"></script>
-        <script src="app/controller/controller.repPorCategoria.js"></script>
-        <script src="app/controller/controller.repGeneralPersonasCategoria.js"></script>
-        <script src="app/controller/controller.repPorFechaCategoria.js"></script>
-        <script src="app/controller/controller.repPorFechaYHoraCategoria.js"></script>
-        <script src="app/controller/controller.logout.js"></script>
-    </body>
+    <!-- enlazamos los controllers -->
+    <script src="app/controller/controller.index.js"></script>
+    <script src="app/controller/controller.control.js"></script>
+    <script src="app/controller/controller.registroColaboradores.js"></script>
+    <script src="app/controller/controller.sistemaUsuarios.js"></script>
+    <script src="app/controller/controller.reportes.js"></script>
+    <script src="app/controller/controller.login.js"></script>
+    <script src="app/controller/controller.repGeneralPersonas.js"></script>
+    <script src="app/controller/controller.repGeneralUsuarios.js"></script>
+    <script src="app/controller/controller.repPorPersona.js"></script>
+    <script src="app/controller/controller.repPorFecha.js"></script>
+    <script src="app/controller/controller.repPorFechaYHora.js"></script>
+    <script src="app/controller/controller.repPorCategoria.js"></script>
+    <script src="app/controller/controller.repGeneralPersonasCategoria.js"></script>
+    <script src="app/controller/controller.repPorFechaCategoria.js"></script>
+    <script src="app/controller/controller.repPorFechaYHoraCategoria.js"></script>
+    <script src="app/controller/controller.logout.js"></script>
+    <script src="app/controller/controller.Buscar.js"></script>
+  </body>
 </html>
