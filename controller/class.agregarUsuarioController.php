@@ -18,7 +18,7 @@ class agregarUsuario extends controllerExtended {
 
 
 
-      $validate = $this->validateData($colaborador);
+      $validate = $this->validateData($usuario);
       if ($validate['code'] === 300) {
         $this->setParam('rsp', $validate);
         $this->setView('imprimirJson');
@@ -57,7 +57,7 @@ class agregarUsuario extends controllerExtended {
     if (is_integer((integer) $usuario->getCedula()) === false) {
       $answer['code'] = 300;
       $answer['datos']['cedula'] = 'La cédula no es un número válido';
-    } elseif (!preg_match('/^[0-9]+/', $colaborador->getCedula())) {
+    } elseif (!preg_match('/^[0-9]+/', $usuario->getCedula())) {
       $answer['code'] = 300;
       $answer['datos']['cedula'] = 'La cédula no es un número válido';
     } elseif (count($usuarioDAO->search($usuario->getCedula())) > 0) {
