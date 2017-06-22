@@ -1,4 +1,4 @@
-angular.module('IngressumApp').controller('sistemaUsuariosController', ['$scope', 'registroUsuarioService', '$sessionStorage', '$location', 'rolAdmin', '$route', '$timeout', function ($scope, agregarUsuario, $sessionStorage, $location, rolAdmin, $route, $timeout) {
+angular.module('IngressumApp').controller('sistemaUsuariosController', ['$scope', 'registroUsuarioService', '$sessionStorage', '$location', 'rolAdmin', '$route', '$timeout', '$parse', function ($scope, agregarUsuario, $sessionStorage, $location, rolAdmin, $route, $timeout, $parse) {
 
     $scope.dataRegistrarUsuario = {
       cedula: '',
@@ -32,14 +32,13 @@ angular.module('IngressumApp').controller('sistemaUsuariosController', ['$scope'
 
     $scope.submit = function () {
       agregarUsuario.agregarUsu($scope.dataRegistrarUsuario).then(function successCallback(response) {
-        //console.log(response);
 
         $scope.usuarioRegistrado = false;
         $scope.dataRegistrarUsuario = {};
         if (response.data.code == 500) {
         } else {
           $scope.usuarioRegistrado = true;
-          $scope.dataRegistrarUsuario = '';
+          //$scope.dataRegistrarUsuario = '';
 
           $timeout(function () {
             $('#nuevoUsuario').modal('toggle');
@@ -74,6 +73,7 @@ angular.module('IngressumApp').controller('sistemaUsuariosController', ['$scope'
         } else {
           $scope.usuarioEditado = true;
           $scope.edit = '';
+
           $timeout(function () {
             $('#editarUsuario').modal('toggle');
           }, 700);
