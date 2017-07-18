@@ -49,32 +49,32 @@
                 </div>
               </form>
 
-              <form class="form-inline">
+              <form class="form-inline" ng-submit="ReporteEntradaSalidaPorFecha()">
                 <div class="form-group">
-                  <input type="date" class="form-control" id="fechai" ng-model="fechaInicialRep">
+                  <input type="date" class="form-control" id="fechai" ng-model="fechaInicialRep" required>
                 </div>
                 <div class="form-group">
-                  <input type="date" class="form-control" id="fechaf" ng-model="fechaFinalRep">
+                  <input type="date" class="form-control" id="fechaf" ng-model="fechaFinalRep" required>
+                </div>
+                <div class="re">
+                  <!--<a href="#!/repPorFecha/{{fechaInicialRep}}/{{fechaFinalRep}}" class="btn btn-default btn-block">Buscar</a>-->
+                  <button type="submit" class="btn btn-default btn-block">Buscar</button>
                 </div>
               </form>
-
-              <div class="re">
-                <a href="#!/repPorFecha/{{fechaInicialRep}}/{{fechaFinalRep}}" class="btn btn-default btn-block">Buscar</a>
-              </div>
             </div>
           </div>
         </div>
         <div   class="esper lin">
-          <div>
+          <form ng-submit="ReportePorPersona()">
             <label>Reporte</label><br>
             <label>de entrada y salida</label><br>
             <label>por persona</label><br>
             <i class="b3 fa fa-user" aria-hidden="true"></i><br>
             <label>Digite el N. de cedula</label><br><br>
-            <input type="text" class="form-control a" ng-model="cedulaReportePorPersona"><br>
-            <a href="#!/repPorPersona/{{cedulaReportePorPersona}}" class="btn btn-default btn-block a">Buscar</a>
-
-          </div>
+            <input type="text" class="form-control a" ng-model="cedulaReportePorPersona" required><br>
+<!--            <a href="#!/repPorPersona/{{cedulaReportePorPersona}}" class="btn btn-default btn-block a">Buscar</a>-->
+            <button type="submit" class="btn btn-default btn-block">Buscar</button>
+          </form>
         </div>
       </div>
       <div id="contenedor2">
@@ -95,26 +95,27 @@
           </div>
           <div class="fh3">
 
-            <form class="form-horizontal">
+            <form class="form-horizontal" ng-submit="ReporteEntradaSalidaPorFechayHora()">
               <div class="form-group">
                 <label for="fecha" class="col-sm-5 control-label lin1">Fecha:</label>
                 <div class="col-sm-7">
-                  <input type="date" class="form-control" id="fecha">
+                  <input type="date" class="form-control" id="fecha" ng-model="fechaRep" >
                 </div>
               </div>
               <div class="form-group">
                 <label for="horai" class="col-sm-5 control-label lin1">Hora Inicial:</label>
                 <div class="col-sm-7">
-                  <input type="time" class="form-control" id="horai">
+                  <input type="time" class="form-control" id="horai" ng-model="horaInicialRep" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="horafi" class="col-sm-5 control-label lin1">Hora Final:</label>
                 <div class="col-sm-7">
-                  <input type="time" class="form-control" id="horafi">
+                  <input type="time" class="form-control" id="horafi" ng-model="horaFinalRep" >
                 </div>
               </div>
-              <a href="#!/repPorFechaYHora" class="btn btn-default btn-block">Buscar</a>
+              <button type="submit" class="btn btn-default btn-block">Buscar</button>
+              <!--              <a href="#!/repPorFechaYHora" class="btn btn-default btn-block">Buscar</a>-->
             </form>
 
           </div>

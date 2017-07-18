@@ -63,7 +63,7 @@ angular.module('IngressumApp').config(['$routeProvider', '$httpProvider', functi
                     controller: 'repPorFechaController',
                     templateUrl: 'app/template/repPorFecha.html'
                 }).
-                when('/repPorFechaYHora', {
+                when('/repPorFechaYHora/:fecha/:HoraInicial/:HoraFinal', {
                     controller: 'repPorFechaYHoraController',
                     templateUrl: 'app/template/repPorFechaYHora.html'
                 }).
@@ -71,11 +71,11 @@ angular.module('IngressumApp').config(['$routeProvider', '$httpProvider', functi
                     controller: 'repPorCategoriaController',
                     templateUrl: 'app/template/repPorCategoria.html'
                 }).
-                when('/repGeneralPersonasCategoria', {
+                when('/repGeneralPersonasCategoria/:categoria', {
                     controller: 'repGeneralPersonasCategoriaController',
                     templateUrl: 'app/template/repGeneralPersonasCategoria.html'
                 }).
-                when('/repPorFechaCategoria', {
+                when('/repPorFechaCategoria/:fechaInicialC/:fechaFinalC/:categoria', {
                     controller: 'repPorFechaCategoriaController',
                     templateUrl: 'app/template/repPorFechaCategoria.html'
                 }).

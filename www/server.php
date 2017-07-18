@@ -14,8 +14,10 @@ require '../config/config.php';
 require '../lib/class.frontController.php';
 
 try {
-    $app = new frontController($config);
-    $app->run();
+  $app = new frontController($config);
+  $app->run();
 } catch (Exception $exc) {
-    echo $exc->getTraceAsString();
+  echo $exc->getMessage();
+  exit();
+  echo $exc->getTraceAsString();
 }

@@ -11,6 +11,10 @@ angular.module('IngressumApp').service('reportesService', ['$http', function ($h
     this.obtenerRepPorFecha = function (data) {
       return $http.post('http://localhost/Ingressum/www/server.php/obtenerRepPorFecha', $.param(data));
     };
+     this.obtenerRepPorFechayHora = function (data) {
+      return $http.post('http://localhost/Ingressum/www/server.php/obtenerRepPorFechayHora', $.param(data));
+    };
+
 
   }]);
 

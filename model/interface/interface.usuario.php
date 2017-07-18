@@ -12,5 +12,5 @@ interface IUsuario {
 
     public function delete($id);
 
-    public function search($user, $password);
+    public function search($alias, $contrasena);
 }

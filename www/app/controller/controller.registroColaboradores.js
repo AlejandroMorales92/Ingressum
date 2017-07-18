@@ -34,7 +34,6 @@ angular.module('IngressumApp').controller('registroColaboradoresController', ['$
             break;
           case 500:
             console.log(response.data);
-            //$scope.colaboradores = [];
         }
       });
     };

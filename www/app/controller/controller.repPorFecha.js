@@ -2,11 +2,8 @@ angular.module('IngressumApp').controller('repPorFechaController', ['$scope', 'r
 
     $scope.reportes = [];
     
-    var fechaInicial = moment($routeParams.fechaInicial, "YYYY-MM-DD").format('YYYY-MM-DD') + ' 00:00:00';
-    var fechaFinal = moment($routeParams.fechaFinal, "YYYY-MM-DD").format('YYYY-MM-DD') + ' 23:59:59';
-    
     $scope.pintarTabla = function () {
-      reportesService.obtenerRepPorFecha({fechaInicial: fechaInicial, fechaFinal: fechaFinal}).then(function successCallback(response) {
+      reportesService.obtenerRepPorFecha({fechaInicial: $routeParams.fechaInicial, fechaFinal: $routeParams.fechaFinal}).then(function successCallback(response) {
         switch (response.data.code) {
           case 200:
             $scope.reportes = response.data.datos;
